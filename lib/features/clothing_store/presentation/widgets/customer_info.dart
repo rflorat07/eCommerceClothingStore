@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../shared/widgets/widgets.dart';
+import '../providers/providers.dart';
 
-class CustomerInfo extends StatelessWidget {
+class CustomerInfo extends ConsumerWidget {
   const CustomerInfo({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final textTheme = Theme.of(context).textTheme;
     final colorScheme = Theme.of(context).colorScheme;
+
+    // Obtiene el perfil del usuario (User) desde el provider tipado
+    final profile = ref.watch(profileProvider);
 
     return SliverToBoxAdapter(
       child: Container(
@@ -28,7 +33,7 @@ class CustomerInfo extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Albert Stevano',
+                  profile.name,
                   style: textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -39,8 +44,8 @@ class CustomerInfo extends StatelessWidget {
             CircularImage(
               width: 32.0,
               height: 32.0,
-              backgroundColor: colorScheme.primaryContainer,
-              image: 'assets/images/profile.png',
+              backgroundColor: Colors.white,
+              image: profile.profilePicture,
             ),
           ],
         ),
