@@ -16,18 +16,20 @@ class PinterestGrid extends StatelessWidget {
       'assets/images/product_4.png',
       // Add more images as needed
     ];
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: MasonryGridView.count(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        crossAxisCount: 2,
-        mainAxisSpacing: 24,
-        crossAxisSpacing: 16,
-        itemCount: images.length,
-        itemBuilder: (context, index) {
-          return PinterestGridItem(imagePath: images[index]);
-        },
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+        child: MasonryGridView.count(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          crossAxisCount: 2,
+          mainAxisSpacing: 24,
+          crossAxisSpacing: 16,
+          itemCount: images.length,
+          itemBuilder: (context, index) {
+            return PinterestGridItem(imagePath: images[index]);
+          },
+        ),
       ),
     );
   }

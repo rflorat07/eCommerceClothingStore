@@ -15,16 +15,28 @@ class CategoryList extends StatelessWidget {
       const CategoryItem(name: 'Jeans', iconName: 'jeans'),
     ];
 
-    return Container(
-      margin: const EdgeInsets.only(top: 16.0),
-      height: 34.0,
-      child: ListView.separated(
-        itemCount: 4,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return categories[index];
-        },
-        separatorBuilder: (context, index) => const SizedBox(width: 16.0),
+    return SliverAppBar(
+      pinned: true,
+      floating: false,
+      primary: false,
+      toolbarHeight: 0,
+      automaticallyImplyLeading: false,
+
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(44.0),
+        child: Container(
+          height: 44.0,
+          padding: const EdgeInsets.only(bottom: 8.0),
+          color: Colors.white,
+          child: ListView.separated(
+            itemCount: 4,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return categories[index];
+            },
+            separatorBuilder: (context, index) => const SizedBox(width: 16.0),
+          ),
+        ),
       ),
     );
   }

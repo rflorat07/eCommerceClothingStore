@@ -1,8 +1,8 @@
 import 'package:go_router/go_router.dart';
 
-import '../../features/clothing_store/presentation/pages/clothing_store_page.dart';
+import '../../features/clothing_store/presentation/pages/clothing_store_home_page.dart';
 import '../../shared/widgets/widgets.dart';
-import '../demo/typography_demo_page.dart';
+import '../demo/demo.dart';
 
 /// Application routes
 class AppRoutes {
@@ -14,6 +14,9 @@ class AppRoutes {
 
   /// Typography demo route
   static const String typographyDemo = '/typography';
+
+  /// Fixed header grid route
+  static const String fixedHeaderGrid = '/fixed-header-grid';
 
   /// Private constructor
   AppRoutes._();
@@ -36,7 +39,12 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.clothingStore,
       name: 'clothing-store',
-      builder: (context, state) => const ClothingStorePage(),
+      builder: (context, state) => const ClothingStoreHomePage(),
+    ),
+    GoRoute(
+      path: AppRoutes.fixedHeaderGrid,
+      name: 'fixed-header-grid',
+      builder: (context, state) => const FixedHorizontalListScreen(),
     ),
   ],
   errorBuilder: (context, state) => ErrorPage(error: state.error.toString()),
