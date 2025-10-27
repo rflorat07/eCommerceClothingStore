@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_typography.dart';
+import 'theme.dart';
 
 /// Application theme configuration
 class AppTheme {
@@ -11,10 +11,7 @@ class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.blue,
-        brightness: Brightness.light,
-      ),
+      colorScheme: lightColorScheme,
       textTheme: AppTypography.lightTextTheme,
       fontFamily: AppTypography.fontFamily,
       appBarTheme: const AppBarTheme(
@@ -47,10 +44,7 @@ class AppTheme {
   static ThemeData get darkTheme {
     return ThemeData(
       useMaterial3: true,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.blue,
-        brightness: Brightness.dark,
-      ),
+      colorScheme: darkColorScheme,
       textTheme: AppTypography.darkTextTheme,
       fontFamily: AppTypography.fontFamily,
       appBarTheme: const AppBarTheme(

@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../../features/clothing_store/presentation/pages/clothing_store_page.dart';
 import '../../shared/widgets/widgets.dart';
 import '../demo/typography_demo_page.dart';
 
@@ -7,6 +8,9 @@ import '../demo/typography_demo_page.dart';
 class AppRoutes {
   /// Home route
   static const String home = '/';
+
+  /// Clothing store route
+  static const String clothingStore = '/clothing-store';
 
   /// Typography demo route
   static const String typographyDemo = '/typography';
@@ -17,7 +21,7 @@ class AppRoutes {
 
 /// Router configuration
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.home,
+  initialLocation: AppRoutes.clothingStore,
   routes: [
     GoRoute(
       path: AppRoutes.home,
@@ -28,6 +32,11 @@ final GoRouter appRouter = GoRouter(
       path: AppRoutes.typographyDemo,
       name: 'typography-demo',
       builder: (context, state) => const TypographyDemoPage(),
+    ),
+    GoRoute(
+      path: AppRoutes.clothingStore,
+      name: 'clothing-store',
+      builder: (context, state) => const ClothingStorePage(),
     ),
   ],
   errorBuilder: (context, state) => ErrorPage(error: state.error.toString()),

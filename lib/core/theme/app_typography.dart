@@ -15,23 +15,23 @@ class AppTypography {
     displayLarge: GoogleFonts.encodeSans(
       fontSize: 57,
       fontWeight: FontWeight.w400,
-      letterSpacing: -0.25,
+      letterSpacing: 0,
       height: 1.12,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
     displayMedium: GoogleFonts.encodeSans(
       fontSize: 45,
       fontWeight: FontWeight.w400,
       letterSpacing: 0,
       height: 1.16,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
     displaySmall: GoogleFonts.encodeSans(
       fontSize: 36,
       fontWeight: FontWeight.w400,
       letterSpacing: 0,
       height: 1.22,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
 
     // Headline styles
@@ -40,21 +40,21 @@ class AppTypography {
       fontWeight: FontWeight.w600,
       letterSpacing: 0,
       height: 1.25,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
     headlineMedium: GoogleFonts.encodeSans(
       fontSize: 28,
       fontWeight: FontWeight.w600,
       letterSpacing: 0,
       height: 1.29,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
     headlineSmall: GoogleFonts.encodeSans(
       fontSize: 24,
       fontWeight: FontWeight.w600,
       letterSpacing: 0,
       height: 1.33,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
 
     // Title styles
@@ -62,68 +62,68 @@ class AppTypography {
       fontSize: 22,
       fontWeight: FontWeight.w500,
       letterSpacing: 0,
-      height: 1.27,
-      color: const Color(0xFF1C1B1F),
+      height: 1.50,
+      color: const Color(0xFF121111),
     ),
     titleMedium: GoogleFonts.encodeSans(
       fontSize: 16,
       fontWeight: FontWeight.w500,
-      letterSpacing: 0.15,
+      letterSpacing: 0,
       height: 1.50,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
     titleSmall: GoogleFonts.encodeSans(
       fontSize: 14,
       fontWeight: FontWeight.w500,
-      letterSpacing: 0.1,
+      letterSpacing: 0,
       height: 1.43,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
 
     // Label styles
     labelLarge: GoogleFonts.encodeSans(
       fontSize: 14,
       fontWeight: FontWeight.w500,
-      letterSpacing: 0.1,
+      letterSpacing: 0,
       height: 1.43,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
     labelMedium: GoogleFonts.encodeSans(
       fontSize: 12,
       fontWeight: FontWeight.w500,
-      letterSpacing: 0.5,
-      height: 1.33,
-      color: const Color(0xFF1C1B1F),
+      letterSpacing: 0,
+      height: 1.5,
+      color: const Color(0xFF121111),
     ),
     labelSmall: GoogleFonts.encodeSans(
-      fontSize: 11,
-      fontWeight: FontWeight.w500,
-      letterSpacing: 0.5,
-      height: 1.45,
-      color: const Color(0xFF1C1B1F),
+      fontSize: 10,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0,
+      height: 1.5,
+      color: const Color(0xFF121111),
     ),
 
     // Body styles
     bodyLarge: GoogleFonts.encodeSans(
       fontSize: 16,
       fontWeight: FontWeight.w400,
-      letterSpacing: 0.5,
+      letterSpacing: 0,
       height: 1.50,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
     bodyMedium: GoogleFonts.encodeSans(
       fontSize: 14,
       fontWeight: FontWeight.w400,
-      letterSpacing: 0.25,
+      letterSpacing: 0,
       height: 1.43,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
     bodySmall: GoogleFonts.encodeSans(
       fontSize: 12,
       fontWeight: FontWeight.w400,
-      letterSpacing: 0.4,
+      letterSpacing: 0,
       height: 1.33,
-      color: const Color(0xFF1C1B1F),
+      color: const Color(0xFF121111),
     ),
   );
 
@@ -196,28 +196,28 @@ class AppTypography {
   static TextStyle get cardSubtitle => GoogleFonts.encodeSans(
     fontSize: 14,
     fontWeight: FontWeight.w400,
-    letterSpacing: 0.25,
+    letterSpacing: 0,
     height: 1.43,
   );
 
   static TextStyle get buttonText => GoogleFonts.encodeSans(
     fontSize: 14,
     fontWeight: FontWeight.w500,
-    letterSpacing: 0.1,
+    letterSpacing: 0,
     height: 1.0,
   );
 
   static TextStyle get chipText => GoogleFonts.encodeSans(
     fontSize: 12,
     fontWeight: FontWeight.w500,
-    letterSpacing: 0.5,
+    letterSpacing: 0,
     height: 1.0,
   );
 
   static TextStyle get navigationText => GoogleFonts.encodeSans(
     fontSize: 12,
     fontWeight: FontWeight.w500,
-    letterSpacing: 0.5,
+    letterSpacing: 0,
     height: 1.33,
   );
 
