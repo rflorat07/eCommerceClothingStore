@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../../shared/widgets/widgets.dart';
+import '../../domain/entities/entities.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key, required this.name, required this.iconName});
+  const CategoryItem({super.key, required this.category});
 
-  final String name;
-  final String iconName;
+  final Category category;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,13 @@ class CategoryItem extends StatelessWidget {
       showBorder: true,
       height: 34.0,
       radius: 8.0,
-      margin: EdgeInsets.only(left: iconName == 'category' ? 24.0 : 0.0),
-      backgroundColor: iconName == 'category'
+      margin: EdgeInsets.only(
+        left: category.name == 'all' ? 24.0 : 0.0,
+      ),
+      backgroundColor: category.name == 'all'
           ? colorScheme.primary
           : Colors.transparent,
-      borderColor: iconName == 'category'
+      borderColor: category.name == 'all'
           ? Colors.transparent
           : colorScheme.outline,
       padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 8.0),
@@ -31,15 +33,16 @@ class CategoryItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          // Icono dinámico según la categoría
           Icon(
-            IconsaxPlusLinear.category,
+            _getCategoryIcon(category.name),
             size: 16.0,
-            color: iconName == 'category' ? Colors.white : colorScheme.primary,
+            color: category.name == 'all' ? Colors.white : colorScheme.primary,
           ),
           Text(
-            name,
+            category.label,
             style: textTheme.labelMedium?.copyWith(
-              color: iconName == 'category'
+              color: category.name == 'all'
                   ? Colors.white
                   : colorScheme.primary,
             ),
@@ -47,5 +50,14 @@ class CategoryItem extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+IconData _getCategoryIcon(String categoryName) {
+  switch (categoryName.toLowerCase()) {
+    case 'all':
+      return IconsaxPlusLinear.category;
+    default:
+      return IconsaxPlusLinear.tag;
   }
 }

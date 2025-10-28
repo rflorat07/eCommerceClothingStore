@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../providers/providers.dart';
 import 'widgets.dart';
 
-class CategoryList extends StatelessWidget {
+class CategoryList extends ConsumerWidget {
   const CategoryList({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    // Placeholder categories
-    final categories = [
-      const CategoryItem(name: 'All Items', iconName: 'category'),
-      const CategoryItem(name: 'Dress', iconName: 'dress'),
-      const CategoryItem(name: 'T-Shirt', iconName: 'tshirt'),
-      const CategoryItem(name: 'Jeans', iconName: 'jeans'),
-    ];
+  Widget build(BuildContext context, WidgetRef ref) {
+    final categories = ref.watch(categoriesProvider);
 
     return SliverAppBar(
       pinned: true,
@@ -29,10 +25,10 @@ class CategoryList extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 8.0),
           color: Colors.white,
           child: ListView.separated(
-            itemCount: 4,
+            itemCount: categories.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return categories[index];
+              return CategoryItem(category: categories[index]);
             },
             separatorBuilder: (context, index) => const SizedBox(width: 16.0),
           ),

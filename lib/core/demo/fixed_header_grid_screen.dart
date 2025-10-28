@@ -83,7 +83,7 @@ Widget _buildPinnedHorizontalListSliver() {
               width: 80,
               margin: const EdgeInsets.symmetric(horizontal: 6),
               decoration: BoxDecoration(
-                color: Colors.pinkAccent.withOpacity(0.1),
+                color: Colors.pinkAccent.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.pinkAccent),
               ),
