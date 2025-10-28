@@ -1,10 +1,10 @@
 import '../entities/entities.dart';
 import '../repositories/repositories.dart';
 
-class GetCategoriesUsecase {
+class GetCategoriesUseCase {
   final ClothingStoreRepository _repository;
 
-  GetCategoriesUsecase(this._repository);
+  GetCategoriesUseCase(this._repository);
 
   List<Category> call() {
     return _repository.getCategories();

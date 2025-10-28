@@ -63,25 +63,44 @@ final getUserUseCaseProvider = AutoDisposeProvider<GetUserUseCase>.internal(
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef GetUserUseCaseRef = AutoDisposeProviderRef<GetUserUseCase>;
-String _$getCategoriesUsecaseHash() =>
-    r'92e3e78ddfd5981b06fc985024cff2980649efcb';
+String _$getCategoriesUseCaseHash() =>
+    r'a1ea9a758dbb8aacba1506a10449841f296ac466';
 
-/// See also [getCategoriesUsecase].
-@ProviderFor(getCategoriesUsecase)
-final getCategoriesUsecaseProvider =
-    AutoDisposeProvider<GetCategoriesUsecase>.internal(
-      getCategoriesUsecase,
-      name: r'getCategoriesUsecaseProvider',
+/// See also [getCategoriesUseCase].
+@ProviderFor(getCategoriesUseCase)
+final getCategoriesUseCaseProvider =
+    AutoDisposeProvider<GetCategoriesUseCase>.internal(
+      getCategoriesUseCase,
+      name: r'getCategoriesUseCaseProvider',
       debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
           ? null
-          : _$getCategoriesUsecaseHash,
+          : _$getCategoriesUseCaseHash,
       dependencies: null,
       allTransitiveDependencies: null,
     );
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef GetCategoriesUsecaseRef = AutoDisposeProviderRef<GetCategoriesUsecase>;
+typedef GetCategoriesUseCaseRef = AutoDisposeProviderRef<GetCategoriesUseCase>;
+String _$getProductsUseCaseHash() =>
+    r'2681c09817f12d13a0ac61fa96d50d305505bd12';
+
+/// See also [getProductsUseCase].
+@ProviderFor(getProductsUseCase)
+final getProductsUseCaseProvider =
+    AutoDisposeProvider<GetProductsUseCase>.internal(
+      getProductsUseCase,
+      name: r'getProductsUseCaseProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$getProductsUseCaseHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef GetProductsUseCaseRef = AutoDisposeProviderRef<GetProductsUseCase>;
 String _$profileHash() => r'bb5cb31a9288a69e384d27ff9af46e72ef2fc550';
 
 /// See also [Profile].
@@ -97,7 +116,7 @@ final profileProvider = AutoDisposeNotifierProvider<Profile, User>.internal(
 );
 
 typedef _$Profile = AutoDisposeNotifier<User>;
-String _$categoriesHash() => r'927921d7797f1b903c87521d49824ed4073cfe76';
+String _$categoriesHash() => r'3bf045ea8df1a62904ef89e0d7b3b89c6f68848f';
 
 /// See also [Categories].
 @ProviderFor(Categories)
@@ -113,5 +132,21 @@ final categoriesProvider =
     );
 
 typedef _$Categories = AutoDisposeNotifier<List<Category>>;
+String _$productsHash() => r'f010e5196b56e6c23314c8d23b17fcf02d5271b4';
+
+/// See also [Products].
+@ProviderFor(Products)
+final productsProvider =
+    AutoDisposeNotifierProvider<Products, List<Product>>.internal(
+      Products.new,
+      name: r'productsProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$productsHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
+
+typedef _$Products = AutoDisposeNotifier<List<Product>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

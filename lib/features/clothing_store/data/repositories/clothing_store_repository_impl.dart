@@ -16,4 +16,9 @@ class ClothingStoreRepositoryImpl implements ClothingStoreRepository {
   List<Category> getCategories() {
     return _localDataSource.getCategories();
   }
+
+  @override
+  List<Product> getProducts() {
+    return _localDataSource.getProducts();
+  }
 }

@@ -27,9 +27,15 @@ GetUserUseCase getUserUseCase(Ref ref) {
 }
 
 @riverpod
-GetCategoriesUsecase getCategoriesUsecase(Ref ref) {
+GetCategoriesUseCase getCategoriesUseCase(Ref ref) {
   final repository = ref.watch(clothingStoreRepositoryProvider);
-  return GetCategoriesUsecase(repository);
+  return GetCategoriesUseCase(repository);
+}
+
+@riverpod
+GetProductsUseCase getProductsUseCase(Ref ref) {
+  final repository = ref.watch(clothingStoreRepositoryProvider);
+  return GetProductsUseCase(repository);
 }
 
 @riverpod
@@ -46,7 +52,16 @@ class Profile extends _$Profile {
 class Categories extends _$Categories {
   @override
   List<Category> build() {
-    final getCategories = ref.watch(getCategoriesUsecaseProvider);
+    final getCategories = ref.watch(getCategoriesUseCaseProvider);
     return getCategories.call();
+  }
+}
+
+@riverpod
+class Products extends _$Products {
+  @override
+  List<Product> build() {
+    final getProducts = ref.watch(getProductsUseCaseProvider);
+    return getProducts.call();
   }
 }

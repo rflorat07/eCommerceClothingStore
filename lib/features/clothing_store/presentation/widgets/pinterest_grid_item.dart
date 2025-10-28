@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/entities/entities.dart';
+
 class PinterestGridItem extends StatelessWidget {
   const PinterestGridItem({
     super.key,
-    required this.imagePath,
+    required this.product,
   });
 
-  final String imagePath;
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +21,11 @@ class PinterestGridItem extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(16),
-          child: Image.asset(imagePath, fit: BoxFit.cover),
+          child: Image.asset(product.thumbnail, fit: BoxFit.cover),
         ),
 
         Text(
-          'Modern Light Clothes',
+          product.title,
           style: textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -32,7 +34,7 @@ class PinterestGridItem extends StatelessWidget {
         ),
 
         Text(
-          'T-Shirt',
+          product.categoryName,
           style: textTheme.labelSmall?.copyWith(
             color: colorScheme.onSurfaceVariant,
           ),
@@ -43,7 +45,7 @@ class PinterestGridItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              '\$212.99',
+              '\$${product.price.toStringAsFixed(2)}',
               style: textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
@@ -54,7 +56,7 @@ class PinterestGridItem extends StatelessWidget {
               children: [
                 const Icon(Icons.star, size: 18.0, color: Colors.amber),
                 Text(
-                  '4.8',
+                  product.rating.rate.toString(),
                   style: textTheme.labelMedium?.copyWith(
                     fontWeight: FontWeight.w400,
                   ),
