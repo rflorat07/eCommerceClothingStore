@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 
-import '../../features/clothing_store/presentation/pages/clothing_store_home_page.dart';
+import '../../features/clothing_store/presentation/pages/pages.dart';
 import '../../shared/widgets/widgets.dart';
 import '../demo/demo.dart';
 
@@ -11,6 +11,9 @@ class AppRoutes {
 
   /// Clothing store route
   static const String clothingStore = '/clothing-store';
+
+  /// Custom bottom navigation bar route
+  static const String customBottomNavBar = '/custom-bottom-nav-bar';
 
   /// Typography demo route
   static const String typographyDemo = '/typography';
@@ -24,27 +27,27 @@ class AppRoutes {
 
 /// Router configuration
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.clothingStore,
+  initialLocation: AppRoutes.customBottomNavBar,
   routes: [
-    GoRoute(
-      path: AppRoutes.home,
-      name: 'home',
-      builder: (context, state) => const TypographyDemoPage(),
-    ),
-    GoRoute(
-      path: AppRoutes.typographyDemo,
-      name: 'typography-demo',
-      builder: (context, state) => const TypographyDemoPage(),
-    ),
     GoRoute(
       path: AppRoutes.clothingStore,
       name: 'clothing-store',
       builder: (context, state) => const ClothingStoreHomePage(),
     ),
     GoRoute(
+      path: AppRoutes.customBottomNavBar,
+      name: 'custom-bottom-nav-bar',
+      builder: (context, state) => const CustomBottomNavigationBar(),
+    ),
+    GoRoute(
       path: AppRoutes.fixedHeaderGrid,
       name: 'fixed-header-grid',
       builder: (context, state) => const FixedHorizontalListScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.typographyDemo,
+      name: 'typography-demo',
+      builder: (context, state) => const TypographyDemoPage(),
     ),
   ],
   errorBuilder: (context, state) => ErrorPage(error: state.error.toString()),
