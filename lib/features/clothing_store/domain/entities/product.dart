@@ -14,6 +14,7 @@ class Product with _$Product {
     required String category,
     required Rating rating,
     required String thumbnail,
+    required bool isFavorite,
     required List<String> availableSizes,
     required List<AvailableColor> availableColors,
   }) = _Product;

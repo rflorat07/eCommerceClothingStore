@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax_plus/iconsax_plus.dart';
 
+import '../../../../shared/widgets/widgets.dart';
 import '../../domain/entities/entities.dart';
 
 class PinterestGridItem extends StatelessWidget {
@@ -19,9 +21,28 @@ class PinterestGridItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 8.0,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(16),
-          child: Image.asset(product.thumbnail, fit: BoxFit.cover),
+        Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset(product.thumbnail, fit: BoxFit.cover),
+            ),
+
+            Positioned(
+              top: 14.0,
+              right: 14.0,
+              child: CircularIcon(
+                size: 15.0,
+                width: 24.0,
+                height: 24.0,
+                icon: product.isFavorite
+                    ? IconsaxPlusBold.heart
+                    : IconsaxPlusLinear.heart,
+                backgroundColor: colorScheme.primary,
+                iconColor: Colors.white,
+              ),
+            ),
+          ],
         ),
 
         Text(
@@ -47,7 +68,7 @@ class PinterestGridItem extends StatelessWidget {
             Text(
               '\$${product.price.toStringAsFixed(2)}',
               style: textTheme.titleSmall?.copyWith(
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w700,
               ),
             ),
 

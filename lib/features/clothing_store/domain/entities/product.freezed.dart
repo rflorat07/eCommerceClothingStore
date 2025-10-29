@@ -26,6 +26,7 @@ mixin _$Product {
   String get category => throw _privateConstructorUsedError;
   Rating get rating => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
+  bool get isFavorite => throw _privateConstructorUsedError;
   List<String> get availableSizes => throw _privateConstructorUsedError;
   List<AvailableColor> get availableColors =>
       throw _privateConstructorUsedError;
@@ -51,6 +52,7 @@ abstract class $ProductCopyWith<$Res> {
     String category,
     Rating rating,
     String thumbnail,
+    bool isFavorite,
     List<String> availableSizes,
     List<AvailableColor> availableColors,
   });
@@ -82,6 +84,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     Object? category = null,
     Object? rating = null,
     Object? thumbnail = null,
+    Object? isFavorite = null,
     Object? availableSizes = null,
     Object? availableColors = null,
   }) {
@@ -123,6 +126,10 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
                 ? _value.thumbnail
                 : thumbnail // ignore: cast_nullable_to_non_nullable
                       as String,
+            isFavorite: null == isFavorite
+                ? _value.isFavorite
+                : isFavorite // ignore: cast_nullable_to_non_nullable
+                      as bool,
             availableSizes: null == availableSizes
                 ? _value.availableSizes
                 : availableSizes // ignore: cast_nullable_to_non_nullable
@@ -165,6 +172,7 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
     String category,
     Rating rating,
     String thumbnail,
+    bool isFavorite,
     List<String> availableSizes,
     List<AvailableColor> availableColors,
   });
@@ -196,6 +204,7 @@ class __$$ProductImplCopyWithImpl<$Res>
     Object? category = null,
     Object? rating = null,
     Object? thumbnail = null,
+    Object? isFavorite = null,
     Object? availableSizes = null,
     Object? availableColors = null,
   }) {
@@ -237,6 +246,10 @@ class __$$ProductImplCopyWithImpl<$Res>
             ? _value.thumbnail
             : thumbnail // ignore: cast_nullable_to_non_nullable
                   as String,
+        isFavorite: null == isFavorite
+            ? _value.isFavorite
+            : isFavorite // ignore: cast_nullable_to_non_nullable
+                  as bool,
         availableSizes: null == availableSizes
             ? _value._availableSizes
             : availableSizes // ignore: cast_nullable_to_non_nullable
@@ -263,6 +276,7 @@ class _$ProductImpl implements _Product {
     required this.category,
     required this.rating,
     required this.thumbnail,
+    required this.isFavorite,
     required final List<String> availableSizes,
     required final List<AvailableColor> availableColors,
   }) : _availableSizes = availableSizes,
@@ -286,6 +300,8 @@ class _$ProductImpl implements _Product {
   final Rating rating;
   @override
   final String thumbnail;
+  @override
+  final bool isFavorite;
   final List<String> _availableSizes;
   @override
   List<String> get availableSizes {
@@ -304,7 +320,7 @@ class _$ProductImpl implements _Product {
 
   @override
   String toString() {
-    return 'Product(id: $id, title: $title, price: $price, discountPercentage: $discountPercentage, description: $description, categoryName: $categoryName, category: $category, rating: $rating, thumbnail: $thumbnail, availableSizes: $availableSizes, availableColors: $availableColors)';
+    return 'Product(id: $id, title: $title, price: $price, discountPercentage: $discountPercentage, description: $description, categoryName: $categoryName, category: $category, rating: $rating, thumbnail: $thumbnail, isFavorite: $isFavorite, availableSizes: $availableSizes, availableColors: $availableColors)';
   }
 
   @override
@@ -326,6 +342,8 @@ class _$ProductImpl implements _Product {
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.thumbnail, thumbnail) ||
                 other.thumbnail == thumbnail) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite) &&
             const DeepCollectionEquality().equals(
               other._availableSizes,
               _availableSizes,
@@ -348,6 +366,7 @@ class _$ProductImpl implements _Product {
     category,
     rating,
     thumbnail,
+    isFavorite,
     const DeepCollectionEquality().hash(_availableSizes),
     const DeepCollectionEquality().hash(_availableColors),
   );
@@ -372,6 +391,7 @@ abstract class _Product implements Product {
     required final String category,
     required final Rating rating,
     required final String thumbnail,
+    required final bool isFavorite,
     required final List<String> availableSizes,
     required final List<AvailableColor> availableColors,
   }) = _$ProductImpl;
@@ -394,6 +414,8 @@ abstract class _Product implements Product {
   Rating get rating;
   @override
   String get thumbnail;
+  @override
+  bool get isFavorite;
   @override
   List<String> get availableSizes;
   @override

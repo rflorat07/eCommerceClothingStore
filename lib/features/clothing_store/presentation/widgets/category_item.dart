@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../../shared/widgets/widgets.dart';
 import '../../domain/entities/entities.dart';
@@ -34,10 +33,10 @@ class CategoryItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Icono dinámico según la categoría
-          Icon(
-            _getCategoryIcon(category.name),
-            size: 16.0,
-            color: category.name == 'all' ? Colors.white : colorScheme.primary,
+          Image.asset(
+            'assets/icons/${category.iconName}.png',
+            width: 16.0,
+            height: 16.0,
           ),
           Text(
             category.label,
@@ -50,14 +49,5 @@ class CategoryItem extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-IconData _getCategoryIcon(String categoryName) {
-  switch (categoryName.toLowerCase()) {
-    case 'all':
-      return IconsaxPlusLinear.category;
-    default:
-      return IconsaxPlusLinear.tag;
   }
 }

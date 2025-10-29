@@ -17,6 +17,7 @@ _$ProductModelImpl _$$ProductModelImplFromJson(Map<String, dynamic> json) =>
       categoryName: json['categoryName'] as String,
       rating: RatingModel.fromJson(json['rating'] as Map<String, dynamic>),
       thumbnail: json['thumbnail'] as String,
+      isFavorite: json['isFavorite'] as bool,
       availableSizes: (json['availableSizes'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -36,6 +37,7 @@ Map<String, dynamic> _$$ProductModelImplToJson(_$ProductModelImpl instance) =>
       'categoryName': instance.categoryName,
       'rating': instance.rating,
       'thumbnail': instance.thumbnail,
+      'isFavorite': instance.isFavorite,
       'availableSizes': instance.availableSizes,
       'availableColors': instance.availableColors,
     };

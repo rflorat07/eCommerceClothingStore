@@ -55,6 +55,7 @@ class ClothingStoreLocalDataSource {
         categoryName: 'T-Shirt',
         rating: Rating(rate: 5.0, count: 892),
         thumbnail: 'assets/images/product_1.png',
+        isFavorite: false,
         availableSizes: ['S', 'M', 'L', 'XL'],
         availableColors: [
           AvailableColor(
@@ -85,6 +86,7 @@ class ClothingStoreLocalDataSource {
         categoryName: 'Dress modern',
         rating: Rating(rate: 5.0, count: 7932),
         thumbnail: 'assets/images/product_2.png',
+        isFavorite: true,
         availableSizes: ['S', 'M', 'L', 'XL'],
         availableColors: [
           AvailableColor(
@@ -115,6 +117,7 @@ class ClothingStoreLocalDataSource {
         categoryName: 'Dress',
         rating: Rating(rate: 4.9, count: 292),
         thumbnail: 'assets/images/product_3.png',
+        isFavorite: false,
         availableSizes: ['S', 'M', 'L', 'XL'],
         availableColors: [
           AvailableColor(
@@ -145,6 +148,7 @@ class ClothingStoreLocalDataSource {
         categoryName: 'Dress modern',
         rating: Rating(rate: 5.0, count: 1892),
         thumbnail: 'assets/images/product_4.png',
+        isFavorite: false,
         availableSizes: ['S', 'M', 'L', 'XL'],
         availableColors: [
           AvailableColor(

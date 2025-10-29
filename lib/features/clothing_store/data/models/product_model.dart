@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../domain/entities/entities.dart';
+
 part 'product_model.freezed.dart';
 part 'product_model.g.dart';
 
@@ -15,6 +17,7 @@ class ProductModel with _$ProductModel {
     required String categoryName,
     required RatingModel rating,
     required String thumbnail,
+    required bool isFavorite,
     required List<String> availableSizes,
     required List<AvailableColorModel> availableColors,
   }) = _ProductModel;
@@ -24,7 +27,33 @@ class ProductModel with _$ProductModel {
 }
 
 extension ProductModelX on ProductModel {
-  // Puedes agregar métodos de conversión a entidad si es necesario
+  Product toEntity() {
+    return Product(
+      id: id,
+      title: title,
+      price: price,
+      discountPercentage: discountPercentage,
+      description: description,
+      category: category,
+      categoryName: categoryName,
+      rating: Rating(
+        rate: rating.rate,
+        count: rating.count,
+      ),
+      thumbnail: thumbnail,
+      isFavorite: isFavorite,
+      availableSizes: availableSizes,
+      availableColors: availableColors
+          .map(
+            (colorModel) => AvailableColor(
+              colorName: colorModel.colorName,
+              hexCode: colorModel.hexCode,
+              stockLevel: colorModel.stockLevel,
+            ),
+          )
+          .toList(),
+    );
+  }
 }
 
 @freezed
