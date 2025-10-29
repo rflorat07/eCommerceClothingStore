@@ -24,7 +24,7 @@ class AppColors {
   static const tertiary = neutral60;
   static const tertiaryContainer = neutral60;
 
-  static const error = Color(0xFFB3261E);
+  static const error = Color(0xFFF13658);
   static const errorContainer = Color(0xFFF9DEDC);
 
   // Extra semantic (optional)

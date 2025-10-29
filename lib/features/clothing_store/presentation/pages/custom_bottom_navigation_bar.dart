@@ -45,6 +45,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
               ),
               CustomBottomNavBarItem(
                 index: 1,
+                showNotificationDot: true,
                 icon: IconsaxPlusLinear.shopping_bag,
                 selectedIcon: IconsaxPlusBold.shopping_bag,
               ),
