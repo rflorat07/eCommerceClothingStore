@@ -10,6 +10,7 @@ class CircularIcon extends StatelessWidget {
     this.height,
     this.margin,
     this.padding,
+    this.boxShadow,
     this.onPressed,
     this.iconColor,
     this.icon,
@@ -26,13 +27,14 @@ class CircularIcon extends StatelessWidget {
   final bool showBorder;
   final Color? iconColor;
   final Color borderColor;
+  final SvgPicture? svgIcon;
+  final BoxShadow? boxShadow;
   final Color? backgroundColor;
   final VoidCallback? onPressed;
   final double? width, height, size;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final double borderRadius, borderWidth;
-  final SvgPicture? svgIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +54,7 @@ class CircularIcon extends StatelessWidget {
         border: showBorder
             ? Border.all(color: borderColor, width: borderWidth)
             : null,
+        boxShadow: boxShadow != null ? [boxShadow!] : null,
       ),
       child: IconButton(
         padding: const EdgeInsets.all(0.0),

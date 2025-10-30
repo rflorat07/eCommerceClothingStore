@@ -7,10 +7,13 @@ import '../demo/demo.dart';
 /// Application routes
 class AppRoutes {
   /// Home route
-  static const String home = '/';
+  static const String home = '/clothing-store';
 
   /// Clothing store route
   static const String clothingStore = '/clothing-store';
+
+  /// Clothing store detail route
+  static const String clothingStoreDetail = '/clothing-store/detail';
 
   /// Custom bottom navigation bar route
   static const String customBottomNavBar = '/custom-bottom-nav-bar';
@@ -35,9 +38,16 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const ClothingStoreHomePage(),
     ),
     GoRoute(
+      path: AppRoutes.clothingStoreDetail,
+      name: 'clothing-store-detail',
+      builder: (context, state) => ClothingStoreDetailPage(
+        product: state.extra as dynamic, // Pass the product from route state
+      ),
+    ),
+    GoRoute(
       path: AppRoutes.customBottomNavBar,
       name: 'custom-bottom-nav-bar',
-      builder: (context, state) => const CustomBottomNavigationBar(),
+      builder: (context, state) => const ClothingStoreBottomNavBar(),
     ),
     GoRoute(
       path: AppRoutes.fixedHeaderGrid,

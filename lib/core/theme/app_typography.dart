@@ -53,7 +53,7 @@ class AppTypography {
       fontSize: 24,
       fontWeight: FontWeight.w600,
       letterSpacing: 0,
-      height: 1.33,
+      height: 1.30,
       color: const Color(0xFF121111),
     ),
 

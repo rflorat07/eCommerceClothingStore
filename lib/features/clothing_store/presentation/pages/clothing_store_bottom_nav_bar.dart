@@ -6,8 +6,8 @@ import '../../../../shared/providers/providers.dart';
 import '../widgets/widgets.dart';
 import 'pages.dart';
 
-class CustomBottomNavigationBar extends ConsumerWidget {
-  const CustomBottomNavigationBar({super.key});
+class ClothingStoreBottomNavBar extends ConsumerWidget {
+  const ClothingStoreBottomNavBar({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -55,6 +55,9 @@ class ClothingStoreLocalDataSource {
         categoryName: 'T-Shirt',
         rating: Rating(rate: 5.0, count: 892),
         thumbnail: 'assets/images/product_1.png',
+        images: [
+          'assets/images/product_detail_1.png',
+        ],
         isFavorite: false,
         availableSizes: ['S', 'M', 'L', 'XL'],
         availableColors: [
@@ -81,11 +84,14 @@ class ClothingStoreLocalDataSource {
         price: 162.99,
         discountPercentage: 190.00,
         description:
-            'Its simple and elegant shape makes it perfect for those of you who like minimalist clothes.',
+            'Its simple and elegant shape makes it perfect for those of you who like minimalist clothes. ',
         category: 'dress',
         categoryName: 'Dress modern',
         rating: Rating(rate: 5.0, count: 7932),
         thumbnail: 'assets/images/product_2.png',
+        images: [
+          'assets/images/product_detail_2.png',
+        ],
         isFavorite: true,
         availableSizes: ['S', 'M', 'L', 'XL'],
         availableColors: [
@@ -117,6 +123,9 @@ class ClothingStoreLocalDataSource {
         categoryName: 'Dress',
         rating: Rating(rate: 4.9, count: 292),
         thumbnail: 'assets/images/product_3.png',
+        images: [
+          'assets/images/product_detail_3.png',
+        ],
         isFavorite: false,
         availableSizes: ['S', 'M', 'L', 'XL'],
         availableColors: [
@@ -148,6 +157,9 @@ class ClothingStoreLocalDataSource {
         categoryName: 'Dress modern',
         rating: Rating(rate: 5.0, count: 1892),
         thumbnail: 'assets/images/product_4.png',
+        images: [
+          'assets/images/product_detail_4.png',
+        ],
         isFavorite: false,
         availableSizes: ['S', 'M', 'L', 'XL'],
         availableColors: [

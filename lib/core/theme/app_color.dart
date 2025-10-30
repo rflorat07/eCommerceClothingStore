@@ -5,7 +5,7 @@ class AppColors {
   static const neutral0 = Color(0xFFFFFFFF);
   static const neutral5 = Color(0xFFF9FAFB);
   static const neutral10 = Color(0xFFF2F3F5);
-  static const neutral20 = Color(0xFFE6E7E9);
+  static const neutral20 = Color(0xFFFDFDFD);
   static const neutral30 = Color(0xFFD3D4D6);
   static const neutral40 = Color(0xFF787676);
   static const neutral50 = Color(0xFFDFDEDE);
@@ -29,7 +29,7 @@ class AppColors {
 
   // Extra semantic (optional)
   static const success = Color(0xFF28C76F);
-  static const info = Color(0xFF3B82F6);
+  static const info = Color(0xFF347EFB);
 
   // Surfaces
   static const backgroundLight = neutral0;
@@ -42,6 +42,7 @@ class AppColors {
 
   // Outline
   static const outline = neutral50;
+  static const divider = Color(0xFFF6F6F6);
   static const outlineVariant = neutral20;
 }
 

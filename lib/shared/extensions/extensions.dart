@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 /// Extension methods for String
 extension StringExtensions on String {
   /// Check if string is empty or null
@@ -37,6 +39,14 @@ extension StringExtensions on String {
   /// Check if string is a valid URL
   bool get isValidUrl {
     return RegExp(r'^https?:\/\/.+').hasMatch(this);
+  }
+
+  Color get toColor {
+    String hex = replaceAll('#', '');
+    if (hex.length == 6) {
+      hex = 'FF$hex'; // Add alpha value if missing
+    }
+    return Color(int.parse(hex, radix: 16));
   }
 }
 
