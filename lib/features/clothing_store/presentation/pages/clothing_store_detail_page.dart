@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
+import '../../../../core/router/app_router.dart';
 import '../../../../core/theme/theme.dart';
 import '../../../../shared/extensions/extensions.dart';
 import '../../../../shared/widgets/widgets.dart';
@@ -18,29 +19,74 @@ class ClothingStoreDetailPage extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 16.0,
-              children: [
-                Stack(
-                  children: [
-                    _buildHeaderImage(context),
-                    _buildBackButton(colorScheme, context),
-                  ],
+      bottomNavigationBar: _buildBottomNavigationBar(textTheme, context),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(
+            24.0,
+            kToolbarHeight + 24.0,
+            24.0,
+            24.0,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 16.0,
+            children: [
+              Stack(
+                children: [
+                  _buildHeaderImage(context),
+                  _buildBackButton(colorScheme, context),
+                ],
+              ),
+
+              _buildDetail(textTheme, colorScheme, context),
+              _buildDescription(textTheme, colorScheme),
+
+              const Divider(color: AppColors.divider),
+
+              _buildChoose(textTheme, colorScheme),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  SafeArea _buildBottomNavigationBar(
+    TextTheme textTheme,
+    BuildContext context,
+  ) {
+    return SafeArea(
+      child: Container(
+        height: 60.0,
+        margin: const EdgeInsets.symmetric(horizontal: 24.0),
+        child: FilledButton(
+          onPressed: () {
+            context.push(AppRoutes.clothingStoreCheckout);
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 4.0,
+            children: [
+              const Icon(IconsaxPlusLinear.shopping_cart, size: 24.0),
+              const SizedBox(width: 4.0),
+              Text(
+                'Add to Cart | \$${product.price}',
+                style: textTheme.labelLarge?.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
-
-                _buildDetail(textTheme, colorScheme, context),
-                _buildDescription(textTheme, colorScheme),
-
-                const Divider(color: AppColors.divider),
-
-                _buildChoose(textTheme, colorScheme),
-              ],
-            ),
+              ),
+              Text(
+                '\$${product.discountPercentage}',
+                style: textTheme.labelSmall?.copyWith(
+                  color: Colors.white,
+                  decorationThickness: 2.0,
+                  decorationColor: Colors.white,
+                  decoration: TextDecoration.lineThrough,
+                ),
+              ),
+            ],
           ),
         ),
       ),

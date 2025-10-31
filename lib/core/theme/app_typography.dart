@@ -67,16 +67,16 @@ class AppTypography {
     ),
     titleMedium: GoogleFonts.encodeSans(
       fontSize: 16,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w600,
       letterSpacing: 0,
-      height: 1.50,
+      height: 1.40,
       color: const Color(0xFF121111),
     ),
     titleSmall: GoogleFonts.encodeSans(
       fontSize: 14,
       fontWeight: FontWeight.w500,
       letterSpacing: 0,
-      height: 1.43,
+      height: 1.40,
       color: const Color(0xFF121111),
     ),
 

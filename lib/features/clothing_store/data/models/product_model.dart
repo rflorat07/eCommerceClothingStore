@@ -17,6 +17,7 @@ class ProductModel with _$ProductModel {
     required String categoryName,
     required RatingModel rating,
     required String thumbnail,
+    required List<String> images,
     required bool isFavorite,
     required List<String> availableSizes,
     required List<AvailableColorModel> availableColors,
@@ -41,6 +42,7 @@ extension ProductModelX on ProductModel {
         count: rating.count,
       ),
       thumbnail: thumbnail,
+      images: images.toList(),
       isFavorite: isFavorite,
       availableSizes: availableSizes,
       availableColors: availableColors

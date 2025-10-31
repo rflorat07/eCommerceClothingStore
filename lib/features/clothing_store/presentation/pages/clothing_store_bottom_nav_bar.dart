@@ -12,11 +12,9 @@ class ClothingStoreBottomNavBar extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final colorScheme = Theme.of(context).colorScheme;
-
     final currentIndex = ref.watch(navigationStateProvider);
 
     return Scaffold(
-      extendBody: true,
       body: IndexedStack(
         index: currentIndex,
         children: const [
