@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 
-import '../../features/clothing_store/presentation/pages/pages.dart';
+import '../../features/clothing_store/high_fidelity/presentation/pages/pages.dart';
 import '../../shared/widgets/widgets.dart';
 import '../demo/demo.dart';
 
