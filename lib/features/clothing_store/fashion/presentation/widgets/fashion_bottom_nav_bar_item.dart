@@ -4,9 +4,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../../shared/providers/providers.dart';
 import '../../../../../shared/widgets/widgets.dart';
 
-class CustomBottomNavBarItem extends ConsumerWidget {
-  const CustomBottomNavBarItem({
+class FashionBottomNavBarItem extends ConsumerWidget {
+  const FashionBottomNavBarItem({
     super.key,
+    this.size = 24.0,
     required this.index,
     required this.icon,
     required this.selectedIcon,
@@ -14,6 +15,7 @@ class CustomBottomNavBarItem extends ConsumerWidget {
   });
 
   final int index;
+  final double? size;
   final IconData icon;
   final IconData selectedIcon;
   final bool showNotificationDot;
@@ -27,27 +29,20 @@ class CustomBottomNavBarItem extends ConsumerWidget {
       child: Stack(
         children: [
           CircularIcon(
-            width: 40.0,
-            height: 40.0,
-            iconColor: Colors.white,
+            size: size,
+            width: 60.0,
+            height: 60.0,
+            iconColor: currentIndex == index
+                ? const Color(0xFF704F38)
+                : Colors.grey,
             icon: currentIndex == index ? selectedIcon : icon,
-            backgroundColor: Colors.white.withValues(alpha: 0.05),
+            backgroundColor: currentIndex == index
+                ? Colors.white
+                : Colors.transparent,
             onPressed: () {
               ref.read(navigationStateProvider.notifier).setPage(index);
             },
           ),
-
-          if (currentIndex == index)
-            const Positioned(
-              left: 18.0,
-              right: 18.0,
-              bottom: 3.0,
-              child: CircularIcon(
-                width: 4.0,
-                height: 4.0,
-                backgroundColor: Colors.white,
-              ),
-            ),
 
           if (showNotificationDot)
             Positioned(

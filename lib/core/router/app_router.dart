@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../../features/clothing_store/fashion/presentation/pages/pages.dart';
 import '../../features/clothing_store/high_fidelity/presentation/pages/pages.dart';
 import '../../shared/widgets/widgets.dart';
 import '../demo/demo.dart';
@@ -21,6 +22,9 @@ class AppRoutes {
   /// Custom bottom navigation bar route
   static const String customBottomNavBar = '/custom-bottom-nav-bar';
 
+  /// Fashion bottom navigation bar route
+  static const String fashionBottomNavBar = '/fashion-bottom-nav-bar';
+
   /// Typography demo route
   static const String typographyDemo = '/typography';
 
@@ -33,8 +37,9 @@ class AppRoutes {
 
 /// Router configuration
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.customBottomNavBar,
+  initialLocation: AppRoutes.fashionBottomNavBar,
   routes: [
+    /// Clothing Store Routes
     GoRoute(
       path: AppRoutes.clothingStore,
       name: 'clothing-store',
@@ -57,6 +62,15 @@ final GoRouter appRouter = GoRouter(
       name: 'custom-bottom-nav-bar',
       builder: (context, state) => const ClothingStoreBottomNavBar(),
     ),
+
+    /// Fashion Routes
+    GoRoute(
+      path: AppRoutes.fashionBottomNavBar,
+      name: 'fashion-bottom-nav-bar',
+      builder: (context, state) => const FashionBottomNavBar(),
+    ),
+
+    /// Demo Routes
     GoRoute(
       path: AppRoutes.fixedHeaderGrid,
       name: 'fixed-header-grid',
