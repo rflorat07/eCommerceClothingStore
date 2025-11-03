@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class FashionAppColors {
   // Accents
   static const primary = Color(0xFF704F38);
-  //static const primaryContainer = Color(0xFF704F38);
+  static const primaryContainer = Color(0xFFF6F0EB);
   static const secondary = Color(0xFF1F2029);
   //static const secondaryContainer = Color(0xFF1F2029);
   static const tertiary = Color(0xFF797979);

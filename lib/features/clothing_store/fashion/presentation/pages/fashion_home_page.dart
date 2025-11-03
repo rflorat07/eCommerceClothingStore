@@ -15,6 +15,7 @@ class FashionHomePage extends StatelessWidget {
             children: [
               FashionLocation(),
               FashionSearchBar(),
+              FashionNewCollection(),
             ],
           ),
         ),
