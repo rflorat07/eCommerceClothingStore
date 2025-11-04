@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../data/datasources/datasources.dart';
 import '../../data/repositories/repositories.dart';
 import '../../domain/repositories/repositories.dart';
-import '../../domain/usecases/get_new_collections_usecase.dart';
+import '../../domain/usecases/usecases.dart';
 
 part 'dependencies_provider.g.dart';
 
@@ -33,4 +33,13 @@ FashionRepository fashionRepository(Ref ref) {
 GetNewCollectionsUseCase getNewCollections(Ref ref) {
   final repository = ref.watch(fashionRepositoryProvider);
   return GetNewCollectionsUseCase(repository);
+}
+
+/// Provider for the get fashion categories use case
+///
+/// Encapsulates the business logic to get fashion categories
+@riverpod
+GetFashionCategoriesUseCase getFashionCategories(Ref ref) {
+  final repository = ref.watch(fashionRepositoryProvider);
+  return GetFashionCategoriesUseCase(repository);
 }

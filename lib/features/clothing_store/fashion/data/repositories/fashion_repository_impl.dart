@@ -17,7 +17,22 @@ class FashionRepositoryImpl implements FashionRepository {
     } catch (error) {
       return Left(
         FashionFailure.unknown(
-          message: 'Error al obtener las colecciones: $error',
+          message: 'Error retrieving collections: $error',
+          error: error,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<FashionFailure, List<Category>>> getFashionCategories() async {
+    try {
+      final categories = await _localDataSource.getFashionCategories();
+      return Right(categories);
+    } catch (error) {
+      return Left(
+        FashionFailure.unknown(
+          message: 'Error retrieving categories : $error',
           error: error,
         ),
       );

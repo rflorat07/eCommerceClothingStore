@@ -4,4 +4,5 @@ import '../entities/entities.dart';
 
 abstract class FashionRepository {
   Future<Either<FashionFailure, List<Collection>>> getNewCollections();
+  Future<Either<FashionFailure, List<Category>>> getFashionCategories();
 }

@@ -13,7 +13,7 @@ class TypographyConstants {
   static const double labelLarge = 14.0;
   static const double labelMedium = 12.0;
   static const double labelSmall = 11.0;
-  static const double bodyLarge = 16.0;
+  static const double bodyLarge = 18.0;
   static const double bodyMedium = 14.0;
   static const double bodySmall = 12.0;
 

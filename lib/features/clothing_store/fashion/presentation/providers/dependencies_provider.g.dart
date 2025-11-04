@@ -75,5 +75,29 @@ final getNewCollectionsProvider =
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef GetNewCollectionsRef = AutoDisposeProviderRef<GetNewCollectionsUseCase>;
+String _$getFashionCategoriesHash() =>
+    r'e37ca92b94c83341601a83b27b4f61fd3781f41c';
+
+/// Provider for the get fashion categories use case
+///
+/// Encapsulates the business logic to get fashion categories
+///
+/// Copied from [getFashionCategories].
+@ProviderFor(getFashionCategories)
+final getFashionCategoriesProvider =
+    AutoDisposeProvider<GetFashionCategoriesUseCase>.internal(
+      getFashionCategories,
+      name: r'getFashionCategoriesProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$getFashionCategoriesHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef GetFashionCategoriesRef =
+    AutoDisposeProviderRef<GetFashionCategoriesUseCase>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

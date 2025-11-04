@@ -16,6 +16,8 @@ class FashionHomePage extends StatelessWidget {
               FashionLocation(),
               FashionSearchBar(),
               FashionNewCollection(),
+              FashionSectionTitle(title: 'Category'),
+              FashionCategoryList(),
             ],
           ),
         ),

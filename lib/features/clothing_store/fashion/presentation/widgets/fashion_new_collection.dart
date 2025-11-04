@@ -111,11 +111,11 @@ Column _newCollectionsContent(
           controller: pageViewController,
           scrollDirection: Axis.horizontal,
           itemCount: collections.length,
-          itemBuilder: (context, index) => RoundedContainer(
+          itemBuilder: (context, index) => const RoundedContainer(
             isNetworkImage: false,
-            margin: const EdgeInsets.symmetric(horizontal: 24.0),
-            borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-            imageUrl: collections[index].imagePath,
+            margin: EdgeInsets.symmetric(horizontal: 24.0),
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+            imageUrl: 'assets/images/fashion/new_collection_1.png',
           ),
         ),
       ),

@@ -105,7 +105,7 @@ class AppTypography {
 
     // Body styles
     bodyLarge: GoogleFonts.encodeSans(
-      fontSize: 16,
+      fontSize: 18,
       fontWeight: FontWeight.w400,
       letterSpacing: 0,
       height: 1.50,

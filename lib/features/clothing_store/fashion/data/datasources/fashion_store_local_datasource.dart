@@ -23,4 +23,31 @@ class FashionStoreLocalDataSource {
       ),
     ];
   }
+
+  Future<List<Category>> getFashionCategories() async {
+    // Simulate fetching local data
+    await Future.delayed(const Duration(seconds: 1));
+    return [
+      const Category(
+        id: '1',
+        name: 'T-Shirt',
+        imageUrl: 'assets/images/fashion/category_1.png',
+      ),
+      const Category(
+        id: '2',
+        name: 'Pant',
+        imageUrl: 'assets/images/fashion/category_2.png',
+      ),
+      const Category(
+        id: '3',
+        name: 'Dress',
+        imageUrl: 'assets/images/fashion/category_2.png',
+      ),
+      const Category(
+        id: '4',
+        name: 'Jacket',
+        imageUrl: 'assets/images/fashion/category_3.png',
+      ),
+    ];
+  }
 }
