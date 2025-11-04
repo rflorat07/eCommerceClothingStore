@@ -1,4 +1,5 @@
 // Primary providers
+export './categories_filters.dart';
 export './categories_providers.dart';
 export './collections_provider.dart';
 export './dependencies_provider.dart';

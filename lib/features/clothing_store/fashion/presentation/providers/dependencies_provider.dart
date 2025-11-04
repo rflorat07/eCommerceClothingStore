@@ -43,3 +43,12 @@ GetFashionCategoriesUseCase getFashionCategories(Ref ref) {
   final repository = ref.watch(fashionRepositoryProvider);
   return GetFashionCategoriesUseCase(repository);
 }
+
+/// Provider for the get fashion categories filters use case
+///
+/// Encapsulates the business logic to get fashion categories filters
+@riverpod
+GetFashionCategoriesFiltersUseCase getFashionCategoriesFilters(Ref ref) {
+  final repository = ref.watch(fashionRepositoryProvider);
+  return GetFashionCategoriesFiltersUseCase(repository);
+}

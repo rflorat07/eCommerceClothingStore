@@ -50,4 +50,36 @@ class FashionStoreLocalDataSource {
       ),
     ];
   }
+
+  Future<List<Category>> getFashionCategoriesFilters() async {
+    // Simulate fetching local data
+    await Future.delayed(const Duration(seconds: 1));
+    return [
+      const Category(
+        id: '1',
+        name: 'All',
+        imageUrl: '',
+      ),
+      const Category(
+        id: '2',
+        name: 'Newest',
+        imageUrl: '',
+      ),
+      const Category(
+        id: '3',
+        name: 'Popular',
+        imageUrl: '',
+      ),
+      const Category(
+        id: '4',
+        name: 'Man',
+        imageUrl: '',
+      ),
+      const Category(
+        id: '5',
+        name: 'Woman',
+        imageUrl: '',
+      ),
+    ];
+  }
 }

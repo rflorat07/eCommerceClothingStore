@@ -38,4 +38,20 @@ class FashionRepositoryImpl implements FashionRepository {
       );
     }
   }
+
+  @override
+  Future<Either<FashionFailure, List<Category>>>
+  getFashionCategoriesFilters() async {
+    try {
+      final categories = await _localDataSource.getFashionCategoriesFilters();
+      return Right(categories);
+    } catch (error) {
+      return Left(
+        FashionFailure.unknown(
+          message: 'Error retrieving categories : $error',
+          error: error,
+        ),
+      );
+    }
+  }
 }

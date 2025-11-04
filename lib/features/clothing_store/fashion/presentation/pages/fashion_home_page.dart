@@ -18,6 +18,8 @@ class FashionHomePage extends StatelessWidget {
               FashionNewCollection(),
               FashionSectionTitle(title: 'Category'),
               FashionCategoryList(),
+              FashionSectionTitle(title: 'Flash Sale', seeAllText: ''),
+              FashionFilteredProductList(),
             ],
           ),
         ),
