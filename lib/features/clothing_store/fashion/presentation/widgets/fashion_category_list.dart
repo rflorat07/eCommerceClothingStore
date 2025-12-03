@@ -31,10 +31,11 @@ class FashionCategoryList extends ConsumerWidget {
     return ListView.separated(
       itemCount: categories.length,
       scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
       itemBuilder: (context, index) {
         return CategoryListItem(index: index, category: categories[index]);
       },
-      separatorBuilder: (context, index) => const SizedBox(width: 24.0),
+      separatorBuilder: (context, index) => const SizedBox(width: 16.0),
     );
   }
 

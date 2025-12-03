@@ -8,7 +8,7 @@ class ClothingStoreLocalDataSource {
       name: 'Albert Stevano',
       email: 'albert.stevano@example.com',
       username: 'albertstevano',
-      profilePicture: 'assets/images/profile.png',
+      profilePicture: 'assets/images/high_fidelity/profile.png',
     );
   }
 
@@ -54,9 +54,9 @@ class ClothingStoreLocalDataSource {
         category: 'tshirt',
         categoryName: 'T-Shirt',
         rating: Rating(rate: 5.0, count: 892),
-        thumbnail: 'assets/images/product_1.png',
+        thumbnail: 'assets/images/high_fidelity/product_1.png',
         images: [
-          'assets/images/product_detail_1.png',
+          'assets/images/high_fidelity/product_detail_1.png',
         ],
         isFavorite: false,
         availableSizes: ['S', 'M', 'L', 'XL'],
@@ -88,9 +88,9 @@ class ClothingStoreLocalDataSource {
         category: 'dress',
         categoryName: 'Dress modern',
         rating: Rating(rate: 5.0, count: 7932),
-        thumbnail: 'assets/images/product_2.png',
+        thumbnail: 'assets/images/high_fidelity/product_2.png',
         images: [
-          'assets/images/product_detail_2.png',
+          'assets/images/high_fidelity/product_detail_2.png',
         ],
         isFavorite: true,
         availableSizes: ['S', 'M', 'L', 'XL'],
@@ -122,9 +122,9 @@ class ClothingStoreLocalDataSource {
         category: 'dress',
         categoryName: 'Dress',
         rating: Rating(rate: 4.9, count: 292),
-        thumbnail: 'assets/images/product_3.png',
+        thumbnail: 'assets/images/high_fidelity/product_3.png',
         images: [
-          'assets/images/product_detail_3.png',
+          'assets/images/high_fidelity/product_detail_3.png',
         ],
         isFavorite: false,
         availableSizes: ['S', 'M', 'L', 'XL'],
@@ -156,9 +156,9 @@ class ClothingStoreLocalDataSource {
         category: 'dress',
         categoryName: 'Dress modern',
         rating: Rating(rate: 5.0, count: 1892),
-        thumbnail: 'assets/images/product_4.png',
+        thumbnail: 'assets/images/high_fidelity/product_4.png',
         images: [
-          'assets/images/product_detail_4.png',
+          'assets/images/high_fidelity/product_detail_4.png',
         ],
         isFavorite: false,
         availableSizes: ['S', 'M', 'L', 'XL'],

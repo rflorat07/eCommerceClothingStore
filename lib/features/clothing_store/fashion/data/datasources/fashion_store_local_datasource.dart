@@ -48,6 +48,11 @@ class FashionStoreLocalDataSource {
         name: 'Jacket',
         imageUrl: 'assets/images/fashion/category_3.png',
       ),
+      const Category(
+        id: '5',
+        name: 'Shoes',
+        imageUrl: 'assets/images/fashion/category_3.png',
+      ),
     ];
   }
 

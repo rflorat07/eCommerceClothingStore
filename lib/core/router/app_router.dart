@@ -37,7 +37,7 @@ class AppRoutes {
 
 /// Router configuration
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.fashionBottomNavBar,
+  initialLocation: AppRoutes.customBottomNavBar,
   routes: [
     /// Clothing Store Routes
     GoRoute(
