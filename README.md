@@ -8,7 +8,7 @@ This application follows the principles of **Clean Architecture** combined with 
 
 [![Product Name Screen Shot][app-screenshot]](https://www.figma.com/community/file/1169625825293818878)
 
-## UI Screens List:
+## 🎯 Implemented Features:
 * Home
 * Detail Product
 * Checkout
