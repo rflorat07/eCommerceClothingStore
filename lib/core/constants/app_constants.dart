@@ -1,13 +1,13 @@
 /// App-wide constants
 class AppConstants {
   /// App name
-  static const String appName = 'Prototype Viewer';
+  static const String appName = 'eCommerce Clothing Store App';
 
   /// App version
-  static const String appVersion = '1.0.0';
+  static const String appVersion = '0.0.1';
 
   /// Database name
-  static const String databaseName = 'prototype_viewer.db';
+  static const String databaseName = 'ecommerce_clothing_store.db';
 
   /// Database version
   static const int databaseVersion = 1;

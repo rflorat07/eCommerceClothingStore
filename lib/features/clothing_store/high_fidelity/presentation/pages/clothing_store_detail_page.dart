@@ -4,7 +4,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../../../core/router/app_router.dart';
 import '../../../../../core/theme/theme.dart';
-import '../../../../../shared/extensions/extensions.dart';
+import '../../../../../shared/extensions/string_extensions.dart';
 import '../../../../../shared/widgets/widgets.dart';
 import '../../domain/entities/entities.dart';
 
