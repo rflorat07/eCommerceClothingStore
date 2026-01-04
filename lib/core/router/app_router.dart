@@ -44,7 +44,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.clothingStoreCheckout,
       name: 'clothing-store-checkout',
-      builder: (context, state) => const ClothingStoreChekoutPage(),
+      builder: (context, state) => const ClothingStoreCheckoutPage(),
     ),
     GoRoute(
       path: AppRoutes.customBottomNavBar,

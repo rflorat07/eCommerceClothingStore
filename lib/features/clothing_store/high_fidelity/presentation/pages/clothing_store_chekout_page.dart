@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/clothing_store_providers.dart';
 import '../widgets/widgets.dart';
 
-class ClothingStoreChekoutPage extends ConsumerWidget {
-  const ClothingStoreChekoutPage({super.key});
+class ClothingStoreCheckoutPage extends ConsumerWidget {
+  const ClothingStoreCheckoutPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
