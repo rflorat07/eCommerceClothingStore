@@ -8,11 +8,13 @@ part 'user_model.g.dart';
 @freezed
 class UserModel with _$UserModel {
   const factory UserModel({
-    required String id,
-    required String name,
-    required String email,
+    required int id,
     required String username,
-    required String profilePicture,
+    required String email,
+    required String firstName,
+    required String lastName,
+    required String gender,
+    required String image,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
@@ -23,10 +25,12 @@ extension UserModelX on UserModel {
   User toEntity() {
     return User(
       id: id,
-      name: name,
-      email: email,
       username: username,
-      profilePicture: profilePicture,
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      gender: gender,
+      image: image,
     );
   }
 }

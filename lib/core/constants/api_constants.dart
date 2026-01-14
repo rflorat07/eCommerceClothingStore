@@ -1,13 +1,13 @@
 /// API constants for the application
 class ApiConstants {
   /// Base URL for the API
-  static const String baseUrl = 'https://api.example.com';
+  static const String baseUrl = 'https://dummyjson.com';
 
   /// API version
   static const String apiVersion = 'v1';
 
   /// Full API URL
-  static const String apiUrl = '$baseUrl/$apiVersion';
+  static const String apiUrl = baseUrl;
 
   /// Connection timeout in milliseconds
   static const int connectionTimeout = 30000;

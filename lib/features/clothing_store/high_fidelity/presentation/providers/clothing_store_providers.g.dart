@@ -101,21 +101,22 @@ final getProductsUseCaseProvider =
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef GetProductsUseCaseRef = AutoDisposeProviderRef<GetProductsUseCase>;
-String _$profileHash() => r'bb5cb31a9288a69e384d27ff9af46e72ef2fc550';
+String _$profileHash() => r'a24af4c7652aadb4544c108fd3a8b98330548980';
 
 /// See also [Profile].
 @ProviderFor(Profile)
-final profileProvider = AutoDisposeNotifierProvider<Profile, User>.internal(
-  Profile.new,
-  name: r'profileProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$profileHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final profileProvider =
+    AutoDisposeAsyncNotifierProvider<Profile, UserModel>.internal(
+      Profile.new,
+      name: r'profileProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$profileHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
-typedef _$Profile = AutoDisposeNotifier<User>;
+typedef _$Profile = AutoDisposeAsyncNotifier<UserModel>;
 String _$categoriesHash() => r'3bf045ea8df1a62904ef89e0d7b3b89c6f68848f';
 
 /// See also [Categories].

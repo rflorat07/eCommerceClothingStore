@@ -1,6 +1,7 @@
 import '../../domain/entities/entities.dart';
 import '../../domain/repositories/repositories.dart';
 import '../datasources/datasources.dart';
+import '../models/models.dart';
 
 class ClothingStoreRepositoryImpl implements ClothingStoreRepository {
   final ClothingStoreLocalDataSource _localDataSource;
@@ -8,7 +9,7 @@ class ClothingStoreRepositoryImpl implements ClothingStoreRepository {
   ClothingStoreRepositoryImpl(this._localDataSource);
 
   @override
-  User getUser() {
+  Future<UserModel> getUser() {
     return _localDataSource.getUser();
   }
 

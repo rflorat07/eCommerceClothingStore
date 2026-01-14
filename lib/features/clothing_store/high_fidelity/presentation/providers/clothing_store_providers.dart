@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/datasources/datasources.dart';
+import '../../data/models/user_model.dart';
 import '../../data/repositories/repositories.dart';
 import '../../domain/entities/entities.dart';
 import '../../domain/repositories/repositories.dart';
@@ -41,10 +42,9 @@ GetProductsUseCase getProductsUseCase(Ref ref) {
 @riverpod
 class Profile extends _$Profile {
   @override
-  User build() {
+  Future<UserModel> build() async {
     final getUser = ref.watch(getUserUseCaseProvider);
-    // El usecase es sincrónico y retorna un User directamente
-    return getUser.call();
+    return await getUser.call();
   }
 }
 

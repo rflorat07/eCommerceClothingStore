@@ -1,15 +1,24 @@
+import '../../../../../core/errors/errors.dart';
+import '../../../../../core/network/network.dart';
 import '../../domain/entities/entities.dart';
+import '../models/user_model.dart';
 
 class ClothingStoreLocalDataSource {
   // Local data source implementation
-  User getUser() {
-    return const User(
-      id: '1',
-      name: 'Albert Stevano',
-      email: 'albert.stevano@example.com',
-      username: 'albertstevano',
-      profilePicture: 'assets/images/high_fidelity/profile.png',
-    );
+  Future<UserModel> getUser() async {
+    try {
+      // Hacer la request usando NetworkClient
+      final response = await NetworkClient.instance.dio.get(
+        'https://dummyjson.com/users/1',
+      );
+
+      // Parsear la respuesta usando Freezed fromJson
+      final user = UserModel.fromJson(response.data);
+      return user;
+    } catch (e) {
+      // En caso de error, retornar datos locales como fallback
+      throw ServerFailure(message: 'Failed to fetch user data: $e');
+    }
   }
 
   List<Category> getCategories() {

@@ -1,7 +1,8 @@
+import '../../data/models/user_model.dart';
 import '../entities/entities.dart';
 
 abstract class ClothingStoreRepository {
-  User getUser();
+  Future<UserModel> getUser();
   List<Category> getCategories();
   List<Product> getProducts();
 }
