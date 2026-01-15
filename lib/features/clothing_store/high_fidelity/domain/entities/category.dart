@@ -5,9 +5,9 @@ part 'category.freezed.dart';
 @freezed
 class Category with _$Category {
   const factory Category({
-    required String id,
+    required String slug,
     required String name,
-    required String label,
-    required String iconName,
+    required String url,
+    String? icon,
   }) = _Category;
 }

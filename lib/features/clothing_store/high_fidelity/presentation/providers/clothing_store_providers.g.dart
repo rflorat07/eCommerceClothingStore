@@ -117,12 +117,12 @@ final profileProvider =
     );
 
 typedef _$Profile = AutoDisposeAsyncNotifier<UserModel>;
-String _$categoriesHash() => r'3bf045ea8df1a62904ef89e0d7b3b89c6f68848f';
+String _$categoriesHash() => r'2a375823c85e25de1186ecf330c3f67922095f16';
 
 /// See also [Categories].
 @ProviderFor(Categories)
 final categoriesProvider =
-    AutoDisposeNotifierProvider<Categories, List<Category>>.internal(
+    AutoDisposeAsyncNotifierProvider<Categories, List<CategoryModel>>.internal(
       Categories.new,
       name: r'categoriesProvider',
       debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -132,7 +132,7 @@ final categoriesProvider =
       allTransitiveDependencies: null,
     );
 
-typedef _$Categories = AutoDisposeNotifier<List<Category>>;
+typedef _$Categories = AutoDisposeAsyncNotifier<List<CategoryModel>>;
 String _$productsHash() => r'f010e5196b56e6c23314c8d23b17fcf02d5271b4';
 
 /// See also [Products].

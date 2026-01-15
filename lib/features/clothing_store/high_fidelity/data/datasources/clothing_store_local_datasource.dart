@@ -1,58 +1,59 @@
 import '../../../../../core/errors/errors.dart';
 import '../../../../../core/network/network.dart';
 import '../../domain/entities/entities.dart';
-import '../models/user_model.dart';
+import '../models/models.dart';
 
 class ClothingStoreLocalDataSource {
   // Local data source implementation
   Future<UserModel> getUser() async {
     try {
-      // Hacer la request usando NetworkClient
+      // Make the request using NetworkClient
       final response = await NetworkClient.instance.dio.get(
         'https://dummyjson.com/users/1',
       );
 
-      // Parsear la respuesta usando Freezed fromJson
+      // Parse the response using Freezed fromJson
       final user = UserModel.fromJson(response.data);
       return user;
     } catch (e) {
-      // En caso de error, retornar datos locales como fallback
+      // In case of error, return local data as fallback
       throw ServerFailure(message: 'Failed to fetch user data: $e');
     }
   }
 
-  List<Category> getCategories() {
-    return [
-      const Category(
-        id: '1',
-        name: 'all',
-        label: 'All Items',
-        iconName: 'category',
-      ),
-      const Category(
-        id: '2',
-        name: 'dress',
-        label: 'Dress',
-        iconName: 'dress',
-      ),
-      const Category(
-        id: '3',
-        name: 'tshirt',
-        label: 'T-Shirt',
-        iconName: 'tshirt',
-      ),
-      const Category(
-        id: '4',
-        name: 'Jeans',
-        label: 'Jeans',
-        iconName: 'jeans',
-      ),
-    ];
+  Future<List<CategoryModel>> getCategories() async {
+    try {
+      // Make the request using NetworkClient
+      final response = await NetworkClient.instance.dio.get(
+        'https://dummyjson.com/products/categories',
+      );
+
+      // Parse the response using Freezed fromJson
+      final categories = (response.data as List)
+          .map((category) => CategoryModel.fromJson(category))
+          .toList();
+
+      // Add "All Item" category at the beginning
+      categories.insert(
+        0,
+        const CategoryModel(
+          slug: 'all',
+          name: 'All Item',
+          url: 'https://dummyjson.com/products',
+          icon: 'category',
+        ),
+      );
+
+      return categories;
+    } catch (e) {
+      // In case of error, return local data as fallback
+      throw ServerFailure(message: 'Failed to fetch categories data: $e');
+    }
   }
 
   List<Product> getProducts() {
+    // Return a list of Product entities
     return [
-      // Return a list of Product entities
       const Product(
         id: 1,
         title: 'Modern Light Clothes',

@@ -8,16 +8,16 @@ part of 'category_model.dart';
 
 _$CategoryModelImpl _$$CategoryModelImplFromJson(Map<String, dynamic> json) =>
     _$CategoryModelImpl(
-      id: json['id'] as String,
+      slug: json['slug'] as String,
       name: json['name'] as String,
-      label: json['label'] as String,
-      iconName: json['iconName'] as String,
+      url: json['url'] as String,
+      icon: json['icon'] as String?,
     );
 
 Map<String, dynamic> _$$CategoryModelImplToJson(_$CategoryModelImpl instance) =>
     <String, dynamic>{
-      'id': instance.id,
+      'slug': instance.slug,
       'name': instance.name,
-      'label': instance.label,
-      'iconName': instance.iconName,
+      'url': instance.url,
+      'icon': instance.icon,
     };

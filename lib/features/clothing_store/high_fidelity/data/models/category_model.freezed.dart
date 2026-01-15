@@ -21,10 +21,10 @@ CategoryModel _$CategoryModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CategoryModel {
-  String get id => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get label => throw _privateConstructorUsedError;
-  String get iconName => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+  String? get icon => throw _privateConstructorUsedError;
 
   /// Serializes this CategoryModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $CategoryModelCopyWith<$Res> {
     $Res Function(CategoryModel) then,
   ) = _$CategoryModelCopyWithImpl<$Res, CategoryModel>;
   @useResult
-  $Res call({String id, String name, String label, String iconName});
+  $Res call({String slug, String name, String url, String? icon});
 }
 
 /// @nodoc
@@ -61,29 +61,29 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? slug = null,
     Object? name = null,
-    Object? label = null,
-    Object? iconName = null,
+    Object? url = null,
+    Object? icon = freezed,
   }) {
     return _then(
       _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
+            slug: null == slug
+                ? _value.slug
+                : slug // ignore: cast_nullable_to_non_nullable
                       as String,
             name: null == name
                 ? _value.name
                 : name // ignore: cast_nullable_to_non_nullable
                       as String,
-            label: null == label
-                ? _value.label
-                : label // ignore: cast_nullable_to_non_nullable
+            url: null == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
                       as String,
-            iconName: null == iconName
-                ? _value.iconName
-                : iconName // ignore: cast_nullable_to_non_nullable
-                      as String,
+            icon: freezed == icon
+                ? _value.icon
+                : icon // ignore: cast_nullable_to_non_nullable
+                      as String?,
           )
           as $Val,
     );
@@ -99,7 +99,7 @@ abstract class _$$CategoryModelImplCopyWith<$Res>
   ) = __$$CategoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String label, String iconName});
+  $Res call({String slug, String name, String url, String? icon});
 }
 
 /// @nodoc
@@ -116,29 +116,29 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? slug = null,
     Object? name = null,
-    Object? label = null,
-    Object? iconName = null,
+    Object? url = null,
+    Object? icon = freezed,
   }) {
     return _then(
       _$CategoryModelImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
+        slug: null == slug
+            ? _value.slug
+            : slug // ignore: cast_nullable_to_non_nullable
                   as String,
         name: null == name
             ? _value.name
             : name // ignore: cast_nullable_to_non_nullable
                   as String,
-        label: null == label
-            ? _value.label
-            : label // ignore: cast_nullable_to_non_nullable
+        url: null == url
+            ? _value.url
+            : url // ignore: cast_nullable_to_non_nullable
                   as String,
-        iconName: null == iconName
-            ? _value.iconName
-            : iconName // ignore: cast_nullable_to_non_nullable
-                  as String,
+        icon: freezed == icon
+            ? _value.icon
+            : icon // ignore: cast_nullable_to_non_nullable
+                  as String?,
       ),
     );
   }
@@ -148,27 +148,27 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CategoryModelImpl implements _CategoryModel {
   const _$CategoryModelImpl({
-    required this.id,
+    required this.slug,
     required this.name,
-    required this.label,
-    required this.iconName,
+    required this.url,
+    this.icon,
   });
 
   factory _$CategoryModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CategoryModelImplFromJson(json);
 
   @override
-  final String id;
+  final String slug;
   @override
   final String name;
   @override
-  final String label;
+  final String url;
   @override
-  final String iconName;
+  final String? icon;
 
   @override
   String toString() {
-    return 'CategoryModel(id: $id, name: $name, label: $label, iconName: $iconName)';
+    return 'CategoryModel(slug: $slug, name: $name, url: $url, icon: $icon)';
   }
 
   @override
@@ -176,16 +176,15 @@ class _$CategoryModelImpl implements _CategoryModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CategoryModelImpl &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.label, label) || other.label == label) &&
-            (identical(other.iconName, iconName) ||
-                other.iconName == iconName));
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.icon, icon) || other.icon == icon));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, label, iconName);
+  int get hashCode => Object.hash(runtimeType, slug, name, url, icon);
 
   /// Create a copy of CategoryModel
   /// with the given fields replaced by the non-null parameter values.
@@ -203,23 +202,23 @@ class _$CategoryModelImpl implements _CategoryModel {
 
 abstract class _CategoryModel implements CategoryModel {
   const factory _CategoryModel({
-    required final String id,
+    required final String slug,
     required final String name,
-    required final String label,
-    required final String iconName,
+    required final String url,
+    final String? icon,
   }) = _$CategoryModelImpl;
 
   factory _CategoryModel.fromJson(Map<String, dynamic> json) =
       _$CategoryModelImpl.fromJson;
 
   @override
-  String get id;
+  String get slug;
   @override
   String get name;
   @override
-  String get label;
+  String get url;
   @override
-  String get iconName;
+  String? get icon;
 
   /// Create a copy of CategoryModel
   /// with the given fields replaced by the non-null parameter values.

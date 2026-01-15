@@ -8,10 +8,10 @@ part 'category_model.g.dart';
 @freezed
 class CategoryModel with _$CategoryModel {
   const factory CategoryModel({
-    required String id,
+    required String slug,
     required String name,
-    required String label,
-    required String iconName,
+    required String url,
+    String? icon,
   }) = _CategoryModel;
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) =>
@@ -21,10 +21,10 @@ class CategoryModel with _$CategoryModel {
 extension CategoryModelX on CategoryModel {
   Category toEntity() {
     return Category(
-      id: id,
+      slug: slug,
       name: name,
-      label: label,
-      iconName: iconName,
+      url: url,
+      icon: icon,
     );
   }
 }

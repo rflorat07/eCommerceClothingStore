@@ -17,10 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Category {
-  String get id => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get label => throw _privateConstructorUsedError;
-  String get iconName => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+  String? get icon => throw _privateConstructorUsedError;
 
   /// Create a copy of Category
   /// with the given fields replaced by the non-null parameter values.
@@ -34,7 +34,7 @@ abstract class $CategoryCopyWith<$Res> {
   factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
       _$CategoryCopyWithImpl<$Res, Category>;
   @useResult
-  $Res call({String id, String name, String label, String iconName});
+  $Res call({String slug, String name, String url, String? icon});
 }
 
 /// @nodoc
@@ -52,29 +52,29 @@ class _$CategoryCopyWithImpl<$Res, $Val extends Category>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? slug = null,
     Object? name = null,
-    Object? label = null,
-    Object? iconName = null,
+    Object? url = null,
+    Object? icon = freezed,
   }) {
     return _then(
       _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
+            slug: null == slug
+                ? _value.slug
+                : slug // ignore: cast_nullable_to_non_nullable
                       as String,
             name: null == name
                 ? _value.name
                 : name // ignore: cast_nullable_to_non_nullable
                       as String,
-            label: null == label
-                ? _value.label
-                : label // ignore: cast_nullable_to_non_nullable
+            url: null == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
                       as String,
-            iconName: null == iconName
-                ? _value.iconName
-                : iconName // ignore: cast_nullable_to_non_nullable
-                      as String,
+            icon: freezed == icon
+                ? _value.icon
+                : icon // ignore: cast_nullable_to_non_nullable
+                      as String?,
           )
           as $Val,
     );
@@ -90,7 +90,7 @@ abstract class _$$CategoryImplCopyWith<$Res>
   ) = __$$CategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String label, String iconName});
+  $Res call({String slug, String name, String url, String? icon});
 }
 
 /// @nodoc
@@ -107,29 +107,29 @@ class __$$CategoryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? slug = null,
     Object? name = null,
-    Object? label = null,
-    Object? iconName = null,
+    Object? url = null,
+    Object? icon = freezed,
   }) {
     return _then(
       _$CategoryImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
+        slug: null == slug
+            ? _value.slug
+            : slug // ignore: cast_nullable_to_non_nullable
                   as String,
         name: null == name
             ? _value.name
             : name // ignore: cast_nullable_to_non_nullable
                   as String,
-        label: null == label
-            ? _value.label
-            : label // ignore: cast_nullable_to_non_nullable
+        url: null == url
+            ? _value.url
+            : url // ignore: cast_nullable_to_non_nullable
                   as String,
-        iconName: null == iconName
-            ? _value.iconName
-            : iconName // ignore: cast_nullable_to_non_nullable
-                  as String,
+        icon: freezed == icon
+            ? _value.icon
+            : icon // ignore: cast_nullable_to_non_nullable
+                  as String?,
       ),
     );
   }
@@ -139,24 +139,24 @@ class __$$CategoryImplCopyWithImpl<$Res>
 
 class _$CategoryImpl implements _Category {
   const _$CategoryImpl({
-    required this.id,
+    required this.slug,
     required this.name,
-    required this.label,
-    required this.iconName,
+    required this.url,
+    this.icon,
   });
 
   @override
-  final String id;
+  final String slug;
   @override
   final String name;
   @override
-  final String label;
+  final String url;
   @override
-  final String iconName;
+  final String? icon;
 
   @override
   String toString() {
-    return 'Category(id: $id, name: $name, label: $label, iconName: $iconName)';
+    return 'Category(slug: $slug, name: $name, url: $url, icon: $icon)';
   }
 
   @override
@@ -164,15 +164,14 @@ class _$CategoryImpl implements _Category {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CategoryImpl &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.label, label) || other.label == label) &&
-            (identical(other.iconName, iconName) ||
-                other.iconName == iconName));
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.icon, icon) || other.icon == icon));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, label, iconName);
+  int get hashCode => Object.hash(runtimeType, slug, name, url, icon);
 
   /// Create a copy of Category
   /// with the given fields replaced by the non-null parameter values.
@@ -185,20 +184,20 @@ class _$CategoryImpl implements _Category {
 
 abstract class _Category implements Category {
   const factory _Category({
-    required final String id,
+    required final String slug,
     required final String name,
-    required final String label,
-    required final String iconName,
+    required final String url,
+    final String? icon,
   }) = _$CategoryImpl;
 
   @override
-  String get id;
+  String get slug;
   @override
   String get name;
   @override
-  String get label;
+  String get url;
   @override
-  String get iconName;
+  String? get icon;
 
   /// Create a copy of Category
   /// with the given fields replaced by the non-null parameter values.

@@ -14,7 +14,7 @@ class ClothingStoreRepositoryImpl implements ClothingStoreRepository {
   }
 
   @override
-  List<Category> getCategories() {
+  Future<List<CategoryModel>> getCategories() {
     return _localDataSource.getCategories();
   }
 
