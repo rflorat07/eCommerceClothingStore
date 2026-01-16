@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/models/models.dart';
+import '../../domain/entities/entities.dart';
 import '../providers/providers.dart';
 import 'widgets.dart';
 
@@ -51,7 +51,7 @@ class _CategoryListContent extends ConsumerWidget {
 class _CategoryList extends StatelessWidget {
   const _CategoryList({required this.categories});
 
-  final List<CategoryModel> categories;
+  final List<Category> categories;
 
   @override
   Widget build(BuildContext context) {

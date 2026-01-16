@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../shared/widgets/widgets.dart';
-import '../../data/models/models.dart';
+import '../../domain/entities/entities.dart';
 import '../providers/providers.dart';
 
 class CustomerInfo extends StatelessWidget {
@@ -40,7 +40,7 @@ class _CustomerInfoContent extends ConsumerWidget {
 class _ProfileData extends StatelessWidget {
   const _ProfileData({required this.value});
 
-  final UserModel value;
+  final User value;
 
   @override
   Widget build(BuildContext context) {

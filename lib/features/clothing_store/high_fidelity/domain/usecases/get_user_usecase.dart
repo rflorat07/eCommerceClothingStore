@@ -1,4 +1,4 @@
-import '../../data/models/user_model.dart';
+import '../entities/entities.dart';
 import '../repositories/repositories.dart';
 
 class GetUserUseCase {
@@ -6,7 +6,7 @@ class GetUserUseCase {
 
   GetUserUseCase(this._repository);
 
-  Future<UserModel> call() {
+  Future<User> call() async {
     return _repository.getUser();
   }
 }

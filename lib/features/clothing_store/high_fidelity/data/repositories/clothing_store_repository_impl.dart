@@ -9,13 +9,17 @@ class ClothingStoreRepositoryImpl implements ClothingStoreRepository {
   ClothingStoreRepositoryImpl(this._localDataSource);
 
   @override
-  Future<UserModel> getUser() {
-    return _localDataSource.getUser();
+  Future<User> getUser() async {
+    final userModel = await _localDataSource.getUser();
+    return userModel.toEntity();
   }
 
   @override
-  Future<List<CategoryModel>> getCategories() {
-    return _localDataSource.getCategories();
+  Future<List<Category>> getCategories() async {
+    final categoriesModel = await _localDataSource.getCategories();
+    return categoriesModel
+        .map((model) => model.toEntity())
+        .toList(); // Mapea lista
   }
 
   @override

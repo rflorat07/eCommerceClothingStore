@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../shared/widgets/widgets.dart';
-import '../../data/models/category_model.dart';
+import '../../domain/entities/entities.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({super.key, required this.category});
 
-  final CategoryModel category;
+  final Category category;
 
   @override
   Widget build(BuildContext context) {

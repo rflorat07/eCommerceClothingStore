@@ -1,4 +1,4 @@
-import '../../data/models/models.dart';
+import '../entities/entities.dart';
 import '../repositories/repositories.dart';
 
 class GetCategoriesUseCase {
@@ -6,7 +6,7 @@ class GetCategoriesUseCase {
 
   GetCategoriesUseCase(this._repository);
 
-  Future<List<CategoryModel>> call() {
+  Future<List<Category>> call() {
     return _repository.getCategories();
   }
 }
