@@ -19,7 +19,7 @@ class ClothingStoreRepositoryImpl implements ClothingStoreRepository {
   }
 
   @override
-  List<Product> getProducts() {
+  Future<List<Product>> getProducts() {
     return _localDataSource.getProducts();
   }
 }

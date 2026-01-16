@@ -51,7 +51,8 @@ class ClothingStoreLocalDataSource {
     }
   }
 
-  List<Product> getProducts() {
+  Future<List<Product>> getProducts() async {
+    await Future.delayed(const Duration(milliseconds: 500));
     // Return a list of Product entities
     return [
       const Product(

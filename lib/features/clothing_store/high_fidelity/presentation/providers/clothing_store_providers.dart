@@ -60,7 +60,7 @@ class Categories extends _$Categories {
 @riverpod
 class Products extends _$Products {
   @override
-  List<Product> build() {
+  Future<List<Product>> build() {
     final getProducts = ref.watch(getProductsUseCaseProvider);
     return getProducts.call();
   }

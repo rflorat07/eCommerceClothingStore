@@ -22,9 +22,9 @@ class ClothingStoreCheckoutPage extends ConsumerWidget {
           children: [
             ...List.generate(
               2,
-              (index) => Padding(
-                padding: const EdgeInsets.only(bottom: 24.0),
-                child: CheckoutItem(product: product[index]),
+              (index) => const Padding(
+                padding: EdgeInsets.only(bottom: 24.0),
+                child: Placeholder(), //CheckoutItem(product: product[index]),
               ),
             ),
 

@@ -5,7 +5,7 @@ class Skeleton extends StatelessWidget {
     super.key,
     this.height,
     this.width,
-    this.radius = 16.0,
+    this.radius = 4.0,
     this.defaultPadding = 16.0,
   });
 
@@ -19,7 +19,7 @@ class Skeleton extends StatelessWidget {
       padding: EdgeInsets.all(defaultPadding / 2),
       decoration: BoxDecoration(
         color: Colors.black.withValues(alpha: 0.04),
-        borderRadius: const BorderRadius.all(Radius.circular(4)),
+        borderRadius: BorderRadius.all(Radius.circular(radius)),
       ),
     );
   }

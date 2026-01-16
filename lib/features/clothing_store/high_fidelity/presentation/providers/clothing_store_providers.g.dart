@@ -133,12 +133,12 @@ final categoriesProvider =
     );
 
 typedef _$Categories = AutoDisposeAsyncNotifier<List<CategoryModel>>;
-String _$productsHash() => r'f010e5196b56e6c23314c8d23b17fcf02d5271b4';
+String _$productsHash() => r'bb9f9eb1bb46b534deb5d87b94e80826e2757fc0';
 
 /// See also [Products].
 @ProviderFor(Products)
 final productsProvider =
-    AutoDisposeNotifierProvider<Products, List<Product>>.internal(
+    AutoDisposeAsyncNotifierProvider<Products, List<Product>>.internal(
       Products.new,
       name: r'productsProvider',
       debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -148,6 +148,6 @@ final productsProvider =
       allTransitiveDependencies: null,
     );
 
-typedef _$Products = AutoDisposeNotifier<List<Product>>;
+typedef _$Products = AutoDisposeAsyncNotifier<List<Product>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
