@@ -10,14 +10,13 @@ class Product with _$Product {
     required double price,
     required double discountPercentage,
     required String description,
-    required String categoryName,
     required String category,
     required Rating rating,
     required String thumbnail,
     required List<String> images,
-    required bool isFavorite,
-    required List<String> availableSizes,
-    required List<AvailableColor> availableColors,
+    @Default(false) bool isFavorite,
+    @Default([]) List<String> availableSizes,
+    @Default([]) List<AvailableColor> availableColors,
   }) = _Product;
 }
 

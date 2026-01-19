@@ -54,7 +54,7 @@ class CheckoutItem extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      product.categoryName,
+                      product.category,
                       style: textTheme.labelSmall?.copyWith(
                         color: AppColors.neutral40,
                       ),

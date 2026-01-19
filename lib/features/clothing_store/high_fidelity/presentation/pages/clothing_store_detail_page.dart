@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
@@ -294,11 +295,17 @@ class ClothingStoreDetailPage extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(16.0),
-      child: Image.asset(
-        product.images.first,
+      child: CachedNetworkImage(
+        imageUrl: product.images.first,
         width: double.infinity,
         height: size.height * 0.48,
         fit: BoxFit.cover,
+        placeholder: (context, url) => const Center(
+          child: CircularProgressIndicator(
+            strokeWidth: 5.0, // Thinner stroke for smaller appearance
+          ),
+        ),
+        errorWidget: (context, url, error) => const Icon(Icons.error),
       ),
     );
   }

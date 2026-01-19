@@ -23,7 +23,8 @@ class ClothingStoreRepositoryImpl implements ClothingStoreRepository {
   }
 
   @override
-  Future<List<Product>> getProducts() {
-    return _localDataSource.getProducts();
+  Future<List<Product>> getProducts() async {
+    final productModel = await _localDataSource.getProducts();
+    return productModel.map((model) => model.toEntity()).toList();
   }
 }

@@ -6,39 +6,64 @@ part of 'product_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductModelImpl _$$ProductModelImplFromJson(Map<String, dynamic> json) =>
-    _$ProductModelImpl(
-      id: (json['id'] as num).toInt(),
-      title: json['title'] as String,
-      price: (json['price'] as num).toDouble(),
-      discountPercentage: (json['discountPercentage'] as num).toDouble(),
-      description: json['description'] as String,
-      category: json['category'] as String,
-      categoryName: json['categoryName'] as String,
-      rating: RatingModel.fromJson(json['rating'] as Map<String, dynamic>),
-      thumbnail: json['thumbnail'] as String,
-      images: (json['images'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      isFavorite: json['isFavorite'] as bool,
-      availableSizes: (json['availableSizes'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      availableColors: (json['availableColors'] as List<dynamic>)
-          .map((e) => AvailableColorModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+_$ProductModelImpl _$$ProductModelImplFromJson(
+  Map<String, dynamic> json,
+) => _$ProductModelImpl(
+  id: (json['id'] as num).toInt(),
+  title: json['title'] as String?,
+  description: json['description'] as String?,
+  category: json['category'] as String?,
+  price: (json['price'] as num).toDouble(),
+  discountPercentage: (json['discountPercentage'] as num).toDouble(),
+  rating: (json['rating'] as num).toDouble(),
+  stock: (json['stock'] as num).toDouble(),
+  tags:
+      (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  brand: json['brand'] as String?,
+  sku: json['sku'] as String?,
+  weight: (json['weight'] as num).toDouble(),
+  warrantyInformation: json['warrantyInformation'] as String?,
+  shippingInformation: json['shippingInformation'] as String?,
+  availabilityStatus: json['availabilityStatus'] as String?,
+  returnPolicy: json['returnPolicy'] as String?,
+  minimumOrderQuantity: (json['minimumOrderQuantity'] as num).toInt(),
+  thumbnail: json['thumbnail'] as String?,
+  images:
+      (json['images'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
+  isFavorite: json['isFavorite'] as bool? ?? false,
+  availableSizes:
+      (json['availableSizes'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
+  availableColors:
+      (json['availableColors'] as List<dynamic>?)
+          ?.map((e) => AvailableColorModel.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
+);
 
 Map<String, dynamic> _$$ProductModelImplToJson(_$ProductModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
-      'price': instance.price,
-      'discountPercentage': instance.discountPercentage,
       'description': instance.description,
       'category': instance.category,
-      'categoryName': instance.categoryName,
+      'price': instance.price,
+      'discountPercentage': instance.discountPercentage,
       'rating': instance.rating,
+      'stock': instance.stock,
+      'tags': instance.tags,
+      'brand': instance.brand,
+      'sku': instance.sku,
+      'weight': instance.weight,
+      'warrantyInformation': instance.warrantyInformation,
+      'shippingInformation': instance.shippingInformation,
+      'availabilityStatus': instance.availabilityStatus,
+      'returnPolicy': instance.returnPolicy,
+      'minimumOrderQuantity': instance.minimumOrderQuantity,
       'thumbnail': instance.thumbnail,
       'images': instance.images,
       'isFavorite': instance.isFavorite,
@@ -46,20 +71,11 @@ Map<String, dynamic> _$$ProductModelImplToJson(_$ProductModelImpl instance) =>
       'availableColors': instance.availableColors,
     };
 
-_$RatingModelImpl _$$RatingModelImplFromJson(Map<String, dynamic> json) =>
-    _$RatingModelImpl(
-      rate: (json['rate'] as num).toDouble(),
-      count: (json['count'] as num).toInt(),
-    );
-
-Map<String, dynamic> _$$RatingModelImplToJson(_$RatingModelImpl instance) =>
-    <String, dynamic>{'rate': instance.rate, 'count': instance.count};
-
 _$AvailableColorModelImpl _$$AvailableColorModelImplFromJson(
   Map<String, dynamic> json,
 ) => _$AvailableColorModelImpl(
-  colorName: json['colorName'] as String,
-  hexCode: json['hexCode'] as String,
+  colorName: json['colorName'] as String?,
+  hexCode: json['hexCode'] as String?,
   stockLevel: (json['stockLevel'] as num).toInt(),
 );
 

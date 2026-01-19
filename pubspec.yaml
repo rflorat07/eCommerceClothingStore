@@ -34,7 +34,6 @@ dependencies:
   either_dart: ^1.0.0
   
   # UI
-  shimmer: ^3.0.0
   flutter_svg: ^2.2.1
   cached_network_image: ^3.4.1
   google_fonts: ^6.2.1

@@ -9,7 +9,7 @@ class ClothingStoreCheckoutPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final product = ref.watch(productsProvider);
+    final asyncProducts = ref.watch(productsProvider);
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(

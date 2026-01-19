@@ -22,7 +22,6 @@ mixin _$Product {
   double get price => throw _privateConstructorUsedError;
   double get discountPercentage => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  String get categoryName => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   Rating get rating => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
@@ -49,7 +48,6 @@ abstract class $ProductCopyWith<$Res> {
     double price,
     double discountPercentage,
     String description,
-    String categoryName,
     String category,
     Rating rating,
     String thumbnail,
@@ -82,7 +80,6 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     Object? price = null,
     Object? discountPercentage = null,
     Object? description = null,
-    Object? categoryName = null,
     Object? category = null,
     Object? rating = null,
     Object? thumbnail = null,
@@ -112,10 +109,6 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
             description: null == description
                 ? _value.description
                 : description // ignore: cast_nullable_to_non_nullable
-                      as String,
-            categoryName: null == categoryName
-                ? _value.categoryName
-                : categoryName // ignore: cast_nullable_to_non_nullable
                       as String,
             category: null == category
                 ? _value.category
@@ -175,7 +168,6 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
     double price,
     double discountPercentage,
     String description,
-    String categoryName,
     String category,
     Rating rating,
     String thumbnail,
@@ -208,7 +200,6 @@ class __$$ProductImplCopyWithImpl<$Res>
     Object? price = null,
     Object? discountPercentage = null,
     Object? description = null,
-    Object? categoryName = null,
     Object? category = null,
     Object? rating = null,
     Object? thumbnail = null,
@@ -238,10 +229,6 @@ class __$$ProductImplCopyWithImpl<$Res>
         description: null == description
             ? _value.description
             : description // ignore: cast_nullable_to_non_nullable
-                  as String,
-        categoryName: null == categoryName
-            ? _value.categoryName
-            : categoryName // ignore: cast_nullable_to_non_nullable
                   as String,
         category: null == category
             ? _value.category
@@ -285,14 +272,13 @@ class _$ProductImpl implements _Product {
     required this.price,
     required this.discountPercentage,
     required this.description,
-    required this.categoryName,
     required this.category,
     required this.rating,
     required this.thumbnail,
     required final List<String> images,
-    required this.isFavorite,
-    required final List<String> availableSizes,
-    required final List<AvailableColor> availableColors,
+    this.isFavorite = false,
+    final List<String> availableSizes = const [],
+    final List<AvailableColor> availableColors = const [],
   }) : _images = images,
        _availableSizes = availableSizes,
        _availableColors = availableColors;
@@ -308,8 +294,6 @@ class _$ProductImpl implements _Product {
   @override
   final String description;
   @override
-  final String categoryName;
-  @override
   final String category;
   @override
   final Rating rating;
@@ -324,9 +308,11 @@ class _$ProductImpl implements _Product {
   }
 
   @override
+  @JsonKey()
   final bool isFavorite;
   final List<String> _availableSizes;
   @override
+  @JsonKey()
   List<String> get availableSizes {
     if (_availableSizes is EqualUnmodifiableListView) return _availableSizes;
     // ignore: implicit_dynamic_type
@@ -335,6 +321,7 @@ class _$ProductImpl implements _Product {
 
   final List<AvailableColor> _availableColors;
   @override
+  @JsonKey()
   List<AvailableColor> get availableColors {
     if (_availableColors is EqualUnmodifiableListView) return _availableColors;
     // ignore: implicit_dynamic_type
@@ -343,7 +330,7 @@ class _$ProductImpl implements _Product {
 
   @override
   String toString() {
-    return 'Product(id: $id, title: $title, price: $price, discountPercentage: $discountPercentage, description: $description, categoryName: $categoryName, category: $category, rating: $rating, thumbnail: $thumbnail, images: $images, isFavorite: $isFavorite, availableSizes: $availableSizes, availableColors: $availableColors)';
+    return 'Product(id: $id, title: $title, price: $price, discountPercentage: $discountPercentage, description: $description, category: $category, rating: $rating, thumbnail: $thumbnail, images: $images, isFavorite: $isFavorite, availableSizes: $availableSizes, availableColors: $availableColors)';
   }
 
   @override
@@ -358,8 +345,6 @@ class _$ProductImpl implements _Product {
                 other.discountPercentage == discountPercentage) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.categoryName, categoryName) ||
-                other.categoryName == categoryName) &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.rating, rating) || other.rating == rating) &&
@@ -386,7 +371,6 @@ class _$ProductImpl implements _Product {
     price,
     discountPercentage,
     description,
-    categoryName,
     category,
     rating,
     thumbnail,
@@ -412,14 +396,13 @@ abstract class _Product implements Product {
     required final double price,
     required final double discountPercentage,
     required final String description,
-    required final String categoryName,
     required final String category,
     required final Rating rating,
     required final String thumbnail,
     required final List<String> images,
-    required final bool isFavorite,
-    required final List<String> availableSizes,
-    required final List<AvailableColor> availableColors,
+    final bool isFavorite,
+    final List<String> availableSizes,
+    final List<AvailableColor> availableColors,
   }) = _$ProductImpl;
 
   @override
@@ -432,8 +415,6 @@ abstract class _Product implements Product {
   double get discountPercentage;
   @override
   String get description;
-  @override
-  String get categoryName;
   @override
   String get category;
   @override

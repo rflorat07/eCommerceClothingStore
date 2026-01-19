@@ -22,14 +22,28 @@ ProductModel _$ProductModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ProductModel {
   int get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError; // Made nullable
+  String? get description =>
+      throw _privateConstructorUsedError; // Made nullable
+  String? get category => throw _privateConstructorUsedError; // Made nullable
   double get price => throw _privateConstructorUsedError;
   double get discountPercentage => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get category => throw _privateConstructorUsedError;
-  String get categoryName => throw _privateConstructorUsedError;
-  RatingModel get rating => throw _privateConstructorUsedError;
-  String get thumbnail => throw _privateConstructorUsedError;
+  double get rating => throw _privateConstructorUsedError;
+  double get stock => throw _privateConstructorUsedError;
+  List<String> get tags => throw _privateConstructorUsedError;
+  String? get brand => throw _privateConstructorUsedError; // Made nullable
+  String? get sku => throw _privateConstructorUsedError; // Made nullable
+  double get weight => throw _privateConstructorUsedError;
+  String? get warrantyInformation =>
+      throw _privateConstructorUsedError; // Made nullable
+  String? get shippingInformation =>
+      throw _privateConstructorUsedError; // Made nullable
+  String? get availabilityStatus =>
+      throw _privateConstructorUsedError; // Made nullable
+  String? get returnPolicy =>
+      throw _privateConstructorUsedError; // Made nullable
+  int get minimumOrderQuantity => throw _privateConstructorUsedError;
+  String? get thumbnail => throw _privateConstructorUsedError; // Made nullable
   List<String> get images => throw _privateConstructorUsedError;
   bool get isFavorite => throw _privateConstructorUsedError;
   List<String> get availableSizes => throw _privateConstructorUsedError;
@@ -55,21 +69,28 @@ abstract class $ProductModelCopyWith<$Res> {
   @useResult
   $Res call({
     int id,
-    String title,
+    String? title,
+    String? description,
+    String? category,
     double price,
     double discountPercentage,
-    String description,
-    String category,
-    String categoryName,
-    RatingModel rating,
-    String thumbnail,
+    double rating,
+    double stock,
+    List<String> tags,
+    String? brand,
+    String? sku,
+    double weight,
+    String? warrantyInformation,
+    String? shippingInformation,
+    String? availabilityStatus,
+    String? returnPolicy,
+    int minimumOrderQuantity,
+    String? thumbnail,
     List<String> images,
     bool isFavorite,
     List<String> availableSizes,
     List<AvailableColorModel> availableColors,
   });
-
-  $RatingModelCopyWith<$Res> get rating;
 }
 
 /// @nodoc
@@ -88,14 +109,23 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
+    Object? title = freezed,
+    Object? description = freezed,
+    Object? category = freezed,
     Object? price = null,
     Object? discountPercentage = null,
-    Object? description = null,
-    Object? category = null,
-    Object? categoryName = null,
     Object? rating = null,
-    Object? thumbnail = null,
+    Object? stock = null,
+    Object? tags = null,
+    Object? brand = freezed,
+    Object? sku = freezed,
+    Object? weight = null,
+    Object? warrantyInformation = freezed,
+    Object? shippingInformation = freezed,
+    Object? availabilityStatus = freezed,
+    Object? returnPolicy = freezed,
+    Object? minimumOrderQuantity = null,
+    Object? thumbnail = freezed,
     Object? images = null,
     Object? isFavorite = null,
     Object? availableSizes = null,
@@ -107,10 +137,18 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
                       as int,
-            title: null == title
+            title: freezed == title
                 ? _value.title
                 : title // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as String?,
+            description: freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            category: freezed == category
+                ? _value.category
+                : category // ignore: cast_nullable_to_non_nullable
+                      as String?,
             price: null == price
                 ? _value.price
                 : price // ignore: cast_nullable_to_non_nullable
@@ -119,26 +157,54 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
                 ? _value.discountPercentage
                 : discountPercentage // ignore: cast_nullable_to_non_nullable
                       as double,
-            description: null == description
-                ? _value.description
-                : description // ignore: cast_nullable_to_non_nullable
-                      as String,
-            category: null == category
-                ? _value.category
-                : category // ignore: cast_nullable_to_non_nullable
-                      as String,
-            categoryName: null == categoryName
-                ? _value.categoryName
-                : categoryName // ignore: cast_nullable_to_non_nullable
-                      as String,
             rating: null == rating
                 ? _value.rating
                 : rating // ignore: cast_nullable_to_non_nullable
-                      as RatingModel,
-            thumbnail: null == thumbnail
+                      as double,
+            stock: null == stock
+                ? _value.stock
+                : stock // ignore: cast_nullable_to_non_nullable
+                      as double,
+            tags: null == tags
+                ? _value.tags
+                : tags // ignore: cast_nullable_to_non_nullable
+                      as List<String>,
+            brand: freezed == brand
+                ? _value.brand
+                : brand // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            sku: freezed == sku
+                ? _value.sku
+                : sku // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            weight: null == weight
+                ? _value.weight
+                : weight // ignore: cast_nullable_to_non_nullable
+                      as double,
+            warrantyInformation: freezed == warrantyInformation
+                ? _value.warrantyInformation
+                : warrantyInformation // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            shippingInformation: freezed == shippingInformation
+                ? _value.shippingInformation
+                : shippingInformation // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            availabilityStatus: freezed == availabilityStatus
+                ? _value.availabilityStatus
+                : availabilityStatus // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            returnPolicy: freezed == returnPolicy
+                ? _value.returnPolicy
+                : returnPolicy // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            minimumOrderQuantity: null == minimumOrderQuantity
+                ? _value.minimumOrderQuantity
+                : minimumOrderQuantity // ignore: cast_nullable_to_non_nullable
+                      as int,
+            thumbnail: freezed == thumbnail
                 ? _value.thumbnail
                 : thumbnail // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as String?,
             images: null == images
                 ? _value.images
                 : images // ignore: cast_nullable_to_non_nullable
@@ -159,16 +225,6 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
           as $Val,
     );
   }
-
-  /// Create a copy of ProductModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RatingModelCopyWith<$Res> get rating {
-    return $RatingModelCopyWith<$Res>(_value.rating, (value) {
-      return _then(_value.copyWith(rating: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -182,22 +238,28 @@ abstract class _$$ProductModelImplCopyWith<$Res>
   @useResult
   $Res call({
     int id,
-    String title,
+    String? title,
+    String? description,
+    String? category,
     double price,
     double discountPercentage,
-    String description,
-    String category,
-    String categoryName,
-    RatingModel rating,
-    String thumbnail,
+    double rating,
+    double stock,
+    List<String> tags,
+    String? brand,
+    String? sku,
+    double weight,
+    String? warrantyInformation,
+    String? shippingInformation,
+    String? availabilityStatus,
+    String? returnPolicy,
+    int minimumOrderQuantity,
+    String? thumbnail,
     List<String> images,
     bool isFavorite,
     List<String> availableSizes,
     List<AvailableColorModel> availableColors,
   });
-
-  @override
-  $RatingModelCopyWith<$Res> get rating;
 }
 
 /// @nodoc
@@ -215,14 +277,23 @@ class __$$ProductModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
+    Object? title = freezed,
+    Object? description = freezed,
+    Object? category = freezed,
     Object? price = null,
     Object? discountPercentage = null,
-    Object? description = null,
-    Object? category = null,
-    Object? categoryName = null,
     Object? rating = null,
-    Object? thumbnail = null,
+    Object? stock = null,
+    Object? tags = null,
+    Object? brand = freezed,
+    Object? sku = freezed,
+    Object? weight = null,
+    Object? warrantyInformation = freezed,
+    Object? shippingInformation = freezed,
+    Object? availabilityStatus = freezed,
+    Object? returnPolicy = freezed,
+    Object? minimumOrderQuantity = null,
+    Object? thumbnail = freezed,
     Object? images = null,
     Object? isFavorite = null,
     Object? availableSizes = null,
@@ -234,10 +305,18 @@ class __$$ProductModelImplCopyWithImpl<$Res>
             ? _value.id
             : id // ignore: cast_nullable_to_non_nullable
                   as int,
-        title: null == title
+        title: freezed == title
             ? _value.title
             : title // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as String?,
+        description: freezed == description
+            ? _value.description
+            : description // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        category: freezed == category
+            ? _value.category
+            : category // ignore: cast_nullable_to_non_nullable
+                  as String?,
         price: null == price
             ? _value.price
             : price // ignore: cast_nullable_to_non_nullable
@@ -246,26 +325,54 @@ class __$$ProductModelImplCopyWithImpl<$Res>
             ? _value.discountPercentage
             : discountPercentage // ignore: cast_nullable_to_non_nullable
                   as double,
-        description: null == description
-            ? _value.description
-            : description // ignore: cast_nullable_to_non_nullable
-                  as String,
-        category: null == category
-            ? _value.category
-            : category // ignore: cast_nullable_to_non_nullable
-                  as String,
-        categoryName: null == categoryName
-            ? _value.categoryName
-            : categoryName // ignore: cast_nullable_to_non_nullable
-                  as String,
         rating: null == rating
             ? _value.rating
             : rating // ignore: cast_nullable_to_non_nullable
-                  as RatingModel,
-        thumbnail: null == thumbnail
+                  as double,
+        stock: null == stock
+            ? _value.stock
+            : stock // ignore: cast_nullable_to_non_nullable
+                  as double,
+        tags: null == tags
+            ? _value._tags
+            : tags // ignore: cast_nullable_to_non_nullable
+                  as List<String>,
+        brand: freezed == brand
+            ? _value.brand
+            : brand // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        sku: freezed == sku
+            ? _value.sku
+            : sku // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        weight: null == weight
+            ? _value.weight
+            : weight // ignore: cast_nullable_to_non_nullable
+                  as double,
+        warrantyInformation: freezed == warrantyInformation
+            ? _value.warrantyInformation
+            : warrantyInformation // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        shippingInformation: freezed == shippingInformation
+            ? _value.shippingInformation
+            : shippingInformation // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        availabilityStatus: freezed == availabilityStatus
+            ? _value.availabilityStatus
+            : availabilityStatus // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        returnPolicy: freezed == returnPolicy
+            ? _value.returnPolicy
+            : returnPolicy // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        minimumOrderQuantity: null == minimumOrderQuantity
+            ? _value.minimumOrderQuantity
+            : minimumOrderQuantity // ignore: cast_nullable_to_non_nullable
+                  as int,
+        thumbnail: freezed == thumbnail
             ? _value.thumbnail
             : thumbnail // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as String?,
         images: null == images
             ? _value._images
             : images // ignore: cast_nullable_to_non_nullable
@@ -292,19 +399,29 @@ class __$$ProductModelImplCopyWithImpl<$Res>
 class _$ProductModelImpl implements _ProductModel {
   const _$ProductModelImpl({
     required this.id,
-    required this.title,
+    this.title,
+    this.description,
+    this.category,
     required this.price,
     required this.discountPercentage,
-    required this.description,
-    required this.category,
-    required this.categoryName,
     required this.rating,
-    required this.thumbnail,
-    required final List<String> images,
-    required this.isFavorite,
-    required final List<String> availableSizes,
-    required final List<AvailableColorModel> availableColors,
-  }) : _images = images,
+    required this.stock,
+    final List<String> tags = const [],
+    this.brand,
+    this.sku,
+    required this.weight,
+    this.warrantyInformation,
+    this.shippingInformation,
+    this.availabilityStatus,
+    this.returnPolicy,
+    required this.minimumOrderQuantity,
+    this.thumbnail,
+    final List<String> images = const [],
+    this.isFavorite = false,
+    final List<String> availableSizes = const [],
+    final List<AvailableColorModel> availableColors = const [],
+  }) : _tags = tags,
+       _images = images,
        _availableSizes = availableSizes,
        _availableColors = availableColors;
 
@@ -314,23 +431,60 @@ class _$ProductModelImpl implements _ProductModel {
   @override
   final int id;
   @override
-  final String title;
+  final String? title;
+  // Made nullable
+  @override
+  final String? description;
+  // Made nullable
+  @override
+  final String? category;
+  // Made nullable
   @override
   final double price;
   @override
   final double discountPercentage;
   @override
-  final String description;
+  final double rating;
   @override
-  final String category;
+  final double stock;
+  final List<String> _tags;
   @override
-  final String categoryName;
+  @JsonKey()
+  List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tags);
+  }
+
   @override
-  final RatingModel rating;
+  final String? brand;
+  // Made nullable
   @override
-  final String thumbnail;
+  final String? sku;
+  // Made nullable
+  @override
+  final double weight;
+  @override
+  final String? warrantyInformation;
+  // Made nullable
+  @override
+  final String? shippingInformation;
+  // Made nullable
+  @override
+  final String? availabilityStatus;
+  // Made nullable
+  @override
+  final String? returnPolicy;
+  // Made nullable
+  @override
+  final int minimumOrderQuantity;
+  @override
+  final String? thumbnail;
+  // Made nullable
   final List<String> _images;
+  // Made nullable
   @override
+  @JsonKey()
   List<String> get images {
     if (_images is EqualUnmodifiableListView) return _images;
     // ignore: implicit_dynamic_type
@@ -338,9 +492,11 @@ class _$ProductModelImpl implements _ProductModel {
   }
 
   @override
+  @JsonKey()
   final bool isFavorite;
   final List<String> _availableSizes;
   @override
+  @JsonKey()
   List<String> get availableSizes {
     if (_availableSizes is EqualUnmodifiableListView) return _availableSizes;
     // ignore: implicit_dynamic_type
@@ -349,6 +505,7 @@ class _$ProductModelImpl implements _ProductModel {
 
   final List<AvailableColorModel> _availableColors;
   @override
+  @JsonKey()
   List<AvailableColorModel> get availableColors {
     if (_availableColors is EqualUnmodifiableListView) return _availableColors;
     // ignore: implicit_dynamic_type
@@ -357,7 +514,7 @@ class _$ProductModelImpl implements _ProductModel {
 
   @override
   String toString() {
-    return 'ProductModel(id: $id, title: $title, price: $price, discountPercentage: $discountPercentage, description: $description, category: $category, categoryName: $categoryName, rating: $rating, thumbnail: $thumbnail, images: $images, isFavorite: $isFavorite, availableSizes: $availableSizes, availableColors: $availableColors)';
+    return 'ProductModel(id: $id, title: $title, description: $description, category: $category, price: $price, discountPercentage: $discountPercentage, rating: $rating, stock: $stock, tags: $tags, brand: $brand, sku: $sku, weight: $weight, warrantyInformation: $warrantyInformation, shippingInformation: $shippingInformation, availabilityStatus: $availabilityStatus, returnPolicy: $returnPolicy, minimumOrderQuantity: $minimumOrderQuantity, thumbnail: $thumbnail, images: $images, isFavorite: $isFavorite, availableSizes: $availableSizes, availableColors: $availableColors)';
   }
 
   @override
@@ -367,16 +524,29 @@ class _$ProductModelImpl implements _ProductModel {
             other is _$ProductModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.price, price) || other.price == price) &&
-            (identical(other.discountPercentage, discountPercentage) ||
-                other.discountPercentage == discountPercentage) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.category, category) ||
                 other.category == category) &&
-            (identical(other.categoryName, categoryName) ||
-                other.categoryName == categoryName) &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.discountPercentage, discountPercentage) ||
+                other.discountPercentage == discountPercentage) &&
             (identical(other.rating, rating) || other.rating == rating) &&
+            (identical(other.stock, stock) || other.stock == stock) &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.sku, sku) || other.sku == sku) &&
+            (identical(other.weight, weight) || other.weight == weight) &&
+            (identical(other.warrantyInformation, warrantyInformation) ||
+                other.warrantyInformation == warrantyInformation) &&
+            (identical(other.shippingInformation, shippingInformation) ||
+                other.shippingInformation == shippingInformation) &&
+            (identical(other.availabilityStatus, availabilityStatus) ||
+                other.availabilityStatus == availabilityStatus) &&
+            (identical(other.returnPolicy, returnPolicy) ||
+                other.returnPolicy == returnPolicy) &&
+            (identical(other.minimumOrderQuantity, minimumOrderQuantity) ||
+                other.minimumOrderQuantity == minimumOrderQuantity) &&
             (identical(other.thumbnail, thumbnail) ||
                 other.thumbnail == thumbnail) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
@@ -394,22 +564,31 @@ class _$ProductModelImpl implements _ProductModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll([
     runtimeType,
     id,
     title,
-    price,
-    discountPercentage,
     description,
     category,
-    categoryName,
+    price,
+    discountPercentage,
     rating,
+    stock,
+    const DeepCollectionEquality().hash(_tags),
+    brand,
+    sku,
+    weight,
+    warrantyInformation,
+    shippingInformation,
+    availabilityStatus,
+    returnPolicy,
+    minimumOrderQuantity,
     thumbnail,
     const DeepCollectionEquality().hash(_images),
     isFavorite,
     const DeepCollectionEquality().hash(_availableSizes),
     const DeepCollectionEquality().hash(_availableColors),
-  );
+  ]);
 
   /// Create a copy of ProductModel
   /// with the given fields replaced by the non-null parameter values.
@@ -428,18 +607,27 @@ class _$ProductModelImpl implements _ProductModel {
 abstract class _ProductModel implements ProductModel {
   const factory _ProductModel({
     required final int id,
-    required final String title,
+    final String? title,
+    final String? description,
+    final String? category,
     required final double price,
     required final double discountPercentage,
-    required final String description,
-    required final String category,
-    required final String categoryName,
-    required final RatingModel rating,
-    required final String thumbnail,
-    required final List<String> images,
-    required final bool isFavorite,
-    required final List<String> availableSizes,
-    required final List<AvailableColorModel> availableColors,
+    required final double rating,
+    required final double stock,
+    final List<String> tags,
+    final String? brand,
+    final String? sku,
+    required final double weight,
+    final String? warrantyInformation,
+    final String? shippingInformation,
+    final String? availabilityStatus,
+    final String? returnPolicy,
+    required final int minimumOrderQuantity,
+    final String? thumbnail,
+    final List<String> images,
+    final bool isFavorite,
+    final List<String> availableSizes,
+    final List<AvailableColorModel> availableColors,
   }) = _$ProductModelImpl;
 
   factory _ProductModel.fromJson(Map<String, dynamic> json) =
@@ -448,21 +636,39 @@ abstract class _ProductModel implements ProductModel {
   @override
   int get id;
   @override
-  String get title;
+  String? get title; // Made nullable
+  @override
+  String? get description; // Made nullable
+  @override
+  String? get category; // Made nullable
   @override
   double get price;
   @override
   double get discountPercentage;
   @override
-  String get description;
+  double get rating;
   @override
-  String get category;
+  double get stock;
   @override
-  String get categoryName;
+  List<String> get tags;
   @override
-  RatingModel get rating;
+  String? get brand; // Made nullable
   @override
-  String get thumbnail;
+  String? get sku; // Made nullable
+  @override
+  double get weight;
+  @override
+  String? get warrantyInformation; // Made nullable
+  @override
+  String? get shippingInformation; // Made nullable
+  @override
+  String? get availabilityStatus; // Made nullable
+  @override
+  String? get returnPolicy; // Made nullable
+  @override
+  int get minimumOrderQuantity;
+  @override
+  String? get thumbnail; // Made nullable
   @override
   List<String> get images;
   @override
@@ -480,182 +686,14 @@ abstract class _ProductModel implements ProductModel {
       throw _privateConstructorUsedError;
 }
 
-RatingModel _$RatingModelFromJson(Map<String, dynamic> json) {
-  return _RatingModel.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RatingModel {
-  double get rate => throw _privateConstructorUsedError;
-  int get count => throw _privateConstructorUsedError;
-
-  /// Serializes this RatingModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RatingModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RatingModelCopyWith<RatingModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RatingModelCopyWith<$Res> {
-  factory $RatingModelCopyWith(
-    RatingModel value,
-    $Res Function(RatingModel) then,
-  ) = _$RatingModelCopyWithImpl<$Res, RatingModel>;
-  @useResult
-  $Res call({double rate, int count});
-}
-
-/// @nodoc
-class _$RatingModelCopyWithImpl<$Res, $Val extends RatingModel>
-    implements $RatingModelCopyWith<$Res> {
-  _$RatingModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RatingModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? rate = null, Object? count = null}) {
-    return _then(
-      _value.copyWith(
-            rate: null == rate
-                ? _value.rate
-                : rate // ignore: cast_nullable_to_non_nullable
-                      as double,
-            count: null == count
-                ? _value.count
-                : count // ignore: cast_nullable_to_non_nullable
-                      as int,
-          )
-          as $Val,
-    );
-  }
-}
-
-/// @nodoc
-abstract class _$$RatingModelImplCopyWith<$Res>
-    implements $RatingModelCopyWith<$Res> {
-  factory _$$RatingModelImplCopyWith(
-    _$RatingModelImpl value,
-    $Res Function(_$RatingModelImpl) then,
-  ) = __$$RatingModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({double rate, int count});
-}
-
-/// @nodoc
-class __$$RatingModelImplCopyWithImpl<$Res>
-    extends _$RatingModelCopyWithImpl<$Res, _$RatingModelImpl>
-    implements _$$RatingModelImplCopyWith<$Res> {
-  __$$RatingModelImplCopyWithImpl(
-    _$RatingModelImpl _value,
-    $Res Function(_$RatingModelImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of RatingModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? rate = null, Object? count = null}) {
-    return _then(
-      _$RatingModelImpl(
-        rate: null == rate
-            ? _value.rate
-            : rate // ignore: cast_nullable_to_non_nullable
-                  as double,
-        count: null == count
-            ? _value.count
-            : count // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$RatingModelImpl implements _RatingModel {
-  const _$RatingModelImpl({required this.rate, required this.count});
-
-  factory _$RatingModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RatingModelImplFromJson(json);
-
-  @override
-  final double rate;
-  @override
-  final int count;
-
-  @override
-  String toString() {
-    return 'RatingModel(rate: $rate, count: $count)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RatingModelImpl &&
-            (identical(other.rate, rate) || other.rate == rate) &&
-            (identical(other.count, count) || other.count == count));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, rate, count);
-
-  /// Create a copy of RatingModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RatingModelImplCopyWith<_$RatingModelImpl> get copyWith =>
-      __$$RatingModelImplCopyWithImpl<_$RatingModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RatingModelImplToJson(this);
-  }
-}
-
-abstract class _RatingModel implements RatingModel {
-  const factory _RatingModel({
-    required final double rate,
-    required final int count,
-  }) = _$RatingModelImpl;
-
-  factory _RatingModel.fromJson(Map<String, dynamic> json) =
-      _$RatingModelImpl.fromJson;
-
-  @override
-  double get rate;
-  @override
-  int get count;
-
-  /// Create a copy of RatingModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RatingModelImplCopyWith<_$RatingModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 AvailableColorModel _$AvailableColorModelFromJson(Map<String, dynamic> json) {
   return _AvailableColorModel.fromJson(json);
 }
 
 /// @nodoc
 mixin _$AvailableColorModel {
-  String get colorName => throw _privateConstructorUsedError;
-  String get hexCode => throw _privateConstructorUsedError;
+  String? get colorName => throw _privateConstructorUsedError; // Made nullable
+  String? get hexCode => throw _privateConstructorUsedError; // Made nullable
   int get stockLevel => throw _privateConstructorUsedError;
 
   /// Serializes this AvailableColorModel to a JSON map.
@@ -675,7 +713,7 @@ abstract class $AvailableColorModelCopyWith<$Res> {
     $Res Function(AvailableColorModel) then,
   ) = _$AvailableColorModelCopyWithImpl<$Res, AvailableColorModel>;
   @useResult
-  $Res call({String colorName, String hexCode, int stockLevel});
+  $Res call({String? colorName, String? hexCode, int stockLevel});
 }
 
 /// @nodoc
@@ -693,20 +731,20 @@ class _$AvailableColorModelCopyWithImpl<$Res, $Val extends AvailableColorModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? colorName = null,
-    Object? hexCode = null,
+    Object? colorName = freezed,
+    Object? hexCode = freezed,
     Object? stockLevel = null,
   }) {
     return _then(
       _value.copyWith(
-            colorName: null == colorName
+            colorName: freezed == colorName
                 ? _value.colorName
                 : colorName // ignore: cast_nullable_to_non_nullable
-                      as String,
-            hexCode: null == hexCode
+                      as String?,
+            hexCode: freezed == hexCode
                 ? _value.hexCode
                 : hexCode // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as String?,
             stockLevel: null == stockLevel
                 ? _value.stockLevel
                 : stockLevel // ignore: cast_nullable_to_non_nullable
@@ -726,7 +764,7 @@ abstract class _$$AvailableColorModelImplCopyWith<$Res>
   ) = __$$AvailableColorModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String colorName, String hexCode, int stockLevel});
+  $Res call({String? colorName, String? hexCode, int stockLevel});
 }
 
 /// @nodoc
@@ -743,20 +781,20 @@ class __$$AvailableColorModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? colorName = null,
-    Object? hexCode = null,
+    Object? colorName = freezed,
+    Object? hexCode = freezed,
     Object? stockLevel = null,
   }) {
     return _then(
       _$AvailableColorModelImpl(
-        colorName: null == colorName
+        colorName: freezed == colorName
             ? _value.colorName
             : colorName // ignore: cast_nullable_to_non_nullable
-                  as String,
-        hexCode: null == hexCode
+                  as String?,
+        hexCode: freezed == hexCode
             ? _value.hexCode
             : hexCode // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as String?,
         stockLevel: null == stockLevel
             ? _value.stockLevel
             : stockLevel // ignore: cast_nullable_to_non_nullable
@@ -770,8 +808,8 @@ class __$$AvailableColorModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AvailableColorModelImpl implements _AvailableColorModel {
   const _$AvailableColorModelImpl({
-    required this.colorName,
-    required this.hexCode,
+    this.colorName,
+    this.hexCode,
     required this.stockLevel,
   });
 
@@ -779,9 +817,11 @@ class _$AvailableColorModelImpl implements _AvailableColorModel {
       _$$AvailableColorModelImplFromJson(json);
 
   @override
-  final String colorName;
+  final String? colorName;
+  // Made nullable
   @override
-  final String hexCode;
+  final String? hexCode;
+  // Made nullable
   @override
   final int stockLevel;
 
@@ -825,8 +865,8 @@ class _$AvailableColorModelImpl implements _AvailableColorModel {
 
 abstract class _AvailableColorModel implements AvailableColorModel {
   const factory _AvailableColorModel({
-    required final String colorName,
-    required final String hexCode,
+    final String? colorName,
+    final String? hexCode,
     required final int stockLevel,
   }) = _$AvailableColorModelImpl;
 
@@ -834,9 +874,9 @@ abstract class _AvailableColorModel implements AvailableColorModel {
       _$AvailableColorModelImpl.fromJson;
 
   @override
-  String get colorName;
+  String? get colorName; // Made nullable
   @override
-  String get hexCode;
+  String? get hexCode; // Made nullable
   @override
   int get stockLevel;
 

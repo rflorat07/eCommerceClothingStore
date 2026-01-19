@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
@@ -31,7 +32,15 @@ class PinterestGridItem extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
-                child: Image.asset(product.thumbnail, fit: BoxFit.cover),
+                child: CachedNetworkImage(
+                  // Replace Image.asset with CachedNetworkImage
+                  imageUrl: product.thumbnail, // Use the URL
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(), // Loading indicator
+                  errorWidget: (context, url, error) =>
+                      const Icon(Icons.error), // Error fallback
+                ),
               ),
 
               Positioned(
@@ -61,7 +70,7 @@ class PinterestGridItem extends StatelessWidget {
           ),
 
           Text(
-            product.categoryName,
+            product.category,
             style: textTheme.labelSmall?.copyWith(
               color: colorScheme.onSurfaceVariant,
             ),

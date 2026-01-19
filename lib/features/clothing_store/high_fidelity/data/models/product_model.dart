@@ -9,18 +9,27 @@ part 'product_model.g.dart';
 class ProductModel with _$ProductModel {
   const factory ProductModel({
     required int id,
-    required String title,
+    String? title, // Made nullable
+    String? description, // Made nullable
+    String? category, // Made nullable
     required double price,
     required double discountPercentage,
-    required String description,
-    required String category,
-    required String categoryName,
-    required RatingModel rating,
-    required String thumbnail,
-    required List<String> images,
-    required bool isFavorite,
-    required List<String> availableSizes,
-    required List<AvailableColorModel> availableColors,
+    required double rating,
+    required double stock,
+    @Default([]) List<String> tags,
+    String? brand, // Made nullable
+    String? sku, // Made nullable
+    required double weight,
+    String? warrantyInformation, // Made nullable
+    String? shippingInformation, // Made nullable
+    String? availabilityStatus, // Made nullable
+    String? returnPolicy, // Made nullable
+    required int minimumOrderQuantity,
+    String? thumbnail, // Made nullable
+    @Default([]) List<String> images,
+    @Default(false) bool isFavorite,
+    @Default([]) List<String> availableSizes,
+    @Default([]) List<AvailableColorModel> availableColors,
   }) = _ProductModel;
 
   factory ProductModel.fromJson(Map<String, dynamic> json) =>
@@ -31,26 +40,26 @@ extension ProductModelX on ProductModel {
   Product toEntity() {
     return Product(
       id: id,
-      title: title,
+      title: title ?? 'Unknown Title', // Provide default if null
       price: price,
       discountPercentage: discountPercentage,
-      description: description,
-      category: category,
-      categoryName: categoryName,
+      description:
+          description ?? 'No description available', // Provide default if null
+      category: category ?? 'Uncategorized', // Provide default if null
       rating: Rating(
-        rate: rating.rate,
-        count: rating.count,
+        rate: rating,
+        count: 4,
       ),
-      thumbnail: thumbnail,
+      thumbnail: thumbnail ?? '', // Provide default if null
       images: images.toList(),
       isFavorite: isFavorite,
       availableSizes: availableSizes,
       availableColors: availableColors
           .map(
-            (colorModel) => AvailableColor(
-              colorName: colorModel.colorName,
-              hexCode: colorModel.hexCode,
-              stockLevel: colorModel.stockLevel,
+            (e) => AvailableColor(
+              colorName: e.colorName ?? 'Unknown', // Provide default if null
+              hexCode: e.hexCode ?? '#000000', // Provide default if null
+              stockLevel: e.stockLevel,
             ),
           )
           .toList(),
@@ -59,21 +68,10 @@ extension ProductModelX on ProductModel {
 }
 
 @freezed
-class RatingModel with _$RatingModel {
-  const factory RatingModel({
-    required double rate,
-    required int count,
-  }) = _RatingModel;
-
-  factory RatingModel.fromJson(Map<String, dynamic> json) =>
-      _$RatingModelFromJson(json);
-}
-
-@freezed
 class AvailableColorModel with _$AvailableColorModel {
   const factory AvailableColorModel({
-    required String colorName,
-    required String hexCode,
+    String? colorName, // Made nullable
+    String? hexCode, // Made nullable
     required int stockLevel,
   }) = _AvailableColorModel;
 

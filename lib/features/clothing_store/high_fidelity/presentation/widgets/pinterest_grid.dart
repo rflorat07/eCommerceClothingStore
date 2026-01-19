@@ -80,7 +80,7 @@ class _PinterestGridErrorSnackBar extends StatelessWidget {
     });
 
     // Return skeleton while showing SnackBar
-    return const CustomerInfoSkeleton();
+    return const _PinterestGridSkeleton();
   }
 }
 
