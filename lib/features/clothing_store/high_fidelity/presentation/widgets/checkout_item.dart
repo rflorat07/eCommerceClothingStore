@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
@@ -25,12 +26,16 @@ class CheckoutItem extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(14.0)),
-                child: Image.asset(
-                  product.thumbnail,
+                child: CachedNetworkImage(
+                  // Replace Image.asset with CachedNetworkImage
+                  imageUrl: product.thumbnail, // Use the URL
+                  fit: BoxFit.cover,
                   width: 70.0,
                   height: 70.0,
-                  fit: BoxFit.cover,
-                  alignment: Alignment.topCenter,
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(), // Loading indicator
+                  errorWidget: (context, url, error) =>
+                      const Icon(Icons.error), // Error fallback
                 ),
               ),
 

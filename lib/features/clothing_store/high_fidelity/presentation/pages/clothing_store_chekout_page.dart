@@ -4,33 +4,18 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/clothing_store_providers.dart';
 import '../widgets/widgets.dart';
 
-class ClothingStoreCheckoutPage extends ConsumerWidget {
+class ClothingStoreCheckoutPage extends StatelessWidget {
   const ClothingStoreCheckoutPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final asyncProducts = ref.watch(productsProvider);
+  Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-
     return Scaffold(
       appBar: const CustomAppBar(),
       bottomNavigationBar: _buildBottomNavigationBar(textTheme),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ...List.generate(
-              2,
-              (index) => const Padding(
-                padding: EdgeInsets.only(bottom: 24.0),
-                child: Placeholder(), //CheckoutItem(product: product[index]),
-              ),
-            ),
-
-            const ShippingInformation(),
-          ],
-        ),
+      body: const SingleChildScrollView(
+        padding: EdgeInsets.all(24.0),
+        child: _ClothingStoreCheckoutContent(),
       ),
     );
   }
@@ -57,4 +42,59 @@ class ClothingStoreCheckoutPage extends ConsumerWidget {
   }
 }
 
-// class IconsaxPlusLinear {} // Remove this if not needed
+class _ClothingStoreCheckoutContent extends ConsumerWidget {
+  const _ClothingStoreCheckoutContent();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final asyncProducts = ref.watch(productsProvider);
+
+    return switch (asyncProducts) {
+      AsyncData(:final value) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ...List.generate(
+            asyncProducts.value.length,
+            (index) => Padding(
+              padding: const EdgeInsets.only(bottom: 24.0),
+              child: CheckoutItem(product: value[index]),
+            ),
+          ),
+
+          //const ShippingInformation(),
+        ],
+      ),
+      AsyncError(:final error) => _CheckoutErrorSnackBar(
+        error: error,
+        ref: ref,
+      ),
+      _ => const CircularProgressIndicator(),
+    };
+  }
+}
+
+class _CheckoutErrorSnackBar extends StatelessWidget {
+  const _CheckoutErrorSnackBar({required this.error, required this.ref});
+
+  final Object error;
+  final WidgetRef ref;
+
+  @override
+  Widget build(BuildContext context) {
+    // Trigger SnackBar on build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'We couldn\'t load your profile. Please try again.',
+          ),
+          duration: Duration(seconds: 5),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    });
+
+    // Return skeleton while showing SnackBar
+    return const CustomerInfoSkeleton();
+  }
+}
