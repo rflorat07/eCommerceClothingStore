@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../../shared/widgets/widgets.dart';
 import '../../domain/entities/entities.dart';
 import '../providers/providers.dart';
 import 'widgets.dart';
@@ -38,9 +39,9 @@ class _CategoryListContent extends ConsumerWidget {
       color: Colors.white,
       child: switch (asyncCategories) {
         AsyncData(:final value) => _CategoryList(categories: value),
-        AsyncError(:final error) => _CategoryErrorSnackBar(
-          error: error,
-          ref: ref,
+        AsyncError() => const CustomErrorSnackBar(
+          message: 'We couldn\'t load categories. Please try again.',
+          widget: CategoryListSkeleton(),
         ),
         _ => const CategoryListSkeleton(),
       },
@@ -63,32 +64,6 @@ class _CategoryList extends StatelessWidget {
       },
       separatorBuilder: (context, index) => const SizedBox(width: 16.0),
     );
-  }
-}
-
-class _CategoryErrorSnackBar extends StatelessWidget {
-  const _CategoryErrorSnackBar({required this.error, required this.ref});
-
-  final Object error;
-  final WidgetRef ref;
-
-  @override
-  Widget build(BuildContext context) {
-    // Trigger SnackBar on build
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            'We couldn\'t load categories. Please try again.',
-          ),
-          duration: Duration(seconds: 5),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
-    });
-
-    // Return skeleton while showing SnackBar
-    return const CustomerInfoSkeleton();
   }
 }
 

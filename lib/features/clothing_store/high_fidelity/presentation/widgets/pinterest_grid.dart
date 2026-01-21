@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import '../../../../../shared/widgets/widgets.dart';
 import '../../domain/entities/entities.dart';
 import '../providers/providers.dart';
 import 'widgets.dart';
@@ -27,9 +28,9 @@ class _PinterestGridContent extends ConsumerWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
       child: switch (asyncProducts) {
         AsyncData(:final value) => _PinterestGridData(products: value),
-        AsyncError(:final error) => _PinterestGridErrorSnackBar(
-          error: error,
-          ref: ref,
+        AsyncError() => const CustomErrorSnackBar(
+          message: 'We couldn\'t load products. Please try again.',
+          widget: _PinterestGridSkeleton(),
         ),
         _ => const _PinterestGridSkeleton(),
       },
@@ -55,32 +56,6 @@ class _PinterestGridData extends StatelessWidget {
         return PinterestGridItem(product: products[index]);
       },
     );
-  }
-}
-
-class _PinterestGridErrorSnackBar extends StatelessWidget {
-  const _PinterestGridErrorSnackBar({required this.error, required this.ref});
-
-  final Object error;
-  final WidgetRef ref;
-
-  @override
-  Widget build(BuildContext context) {
-    // Trigger SnackBar on build
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            'We couldn\'t load products. Please try again.',
-          ),
-          duration: Duration(seconds: 5),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
-    });
-
-    // Return skeleton while showing SnackBar
-    return const _PinterestGridSkeleton();
   }
 }
 

@@ -151,3 +151,31 @@ class CustomEmptyWidget extends StatelessWidget {
     );
   }
 }
+
+class CustomErrorSnackBar extends StatelessWidget {
+  const CustomErrorSnackBar({
+    super.key,
+    required this.message,
+    this.widget = const CircularProgressIndicator(),
+  });
+
+  final String message;
+  final Widget widget;
+
+  @override
+  Widget build(BuildContext context) {
+    // Trigger SnackBar on build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          duration: const Duration(seconds: 5),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    });
+
+    // Return skeleton while showing SnackBar
+    return widget;
+  }
+}

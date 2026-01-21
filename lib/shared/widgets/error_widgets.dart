@@ -34,7 +34,7 @@ class ErrorPage extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             ElevatedButton(
-              onPressed: () => context.go(AppRoutes.home),
+              onPressed: () => context.go(AppRoutes.clothingStore),
               child: const Text('Go Home'),
             ),
           ],

@@ -19,9 +19,9 @@ class ClothingStoreBottomNavBar extends ConsumerWidget {
         index: currentIndex,
         children: const [
           ClothingStoreHomePage(),
-          Center(child: Text('Shopping Bag Page')),
-          Center(child: Text('Favorites Page')),
-          Center(child: Text('Profile Page')),
+          ClothingStoreShoppingBagPage(),
+          ClothingStoreFavoritesPage(),
+          ClothingStoreProfilePage(),
         ],
       ),
       bottomNavigationBar: SafeArea(

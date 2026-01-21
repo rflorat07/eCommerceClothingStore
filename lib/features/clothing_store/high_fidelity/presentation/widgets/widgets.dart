@@ -5,6 +5,7 @@ export 'custom_app_bar.dart';
 export 'custom_bottom_nav_bar_item.dart';
 export 'custom_search_bar.dart';
 export 'customer_info.dart';
+export 'favorite_item.dart';
 export 'pinterest_grid.dart';
 export 'pinterest_grid_item.dart';
 export 'shipping_information.dart';

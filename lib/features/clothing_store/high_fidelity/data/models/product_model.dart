@@ -63,6 +63,7 @@ extension ProductModelX on ProductModel {
             ),
           )
           .toList(),
+      brand: brand ?? 'Unknown Brand', // Provide default if null
     );
   }
 }

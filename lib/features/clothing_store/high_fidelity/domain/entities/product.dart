@@ -11,6 +11,7 @@ class Product with _$Product {
     required double discountPercentage,
     required String description,
     required String category,
+    required String brand,
     required Rating rating,
     required String thumbnail,
     required List<String> images,

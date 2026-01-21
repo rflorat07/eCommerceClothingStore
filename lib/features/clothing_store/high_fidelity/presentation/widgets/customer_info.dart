@@ -27,9 +27,9 @@ class _CustomerInfoContent extends ConsumerWidget {
       padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 16.0),
       child: switch (asyncProfile) {
         AsyncData(:final value) => _ProfileData(value: value),
-        AsyncError(:final error) => _ProfileErrorSnackBar(
-          error: error,
-          ref: ref,
+        AsyncError() => const CustomErrorSnackBar(
+          message: 'We couldn\'t load your profile. Please try again.',
+          widget: CustomerInfoSkeleton(),
         ),
         _ => const CustomerInfoSkeleton(),
       },
@@ -78,32 +78,6 @@ class _ProfileData extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class _ProfileErrorSnackBar extends StatelessWidget {
-  const _ProfileErrorSnackBar({required this.error, required this.ref});
-
-  final Object error;
-  final WidgetRef ref;
-
-  @override
-  Widget build(BuildContext context) {
-    // Trigger SnackBar on build
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            'We couldn\'t load your profile. Please try again.',
-          ),
-          duration: Duration(seconds: 5),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
-    });
-
-    // Return skeleton while showing SnackBar
-    return const CustomerInfoSkeleton();
   }
 }
 

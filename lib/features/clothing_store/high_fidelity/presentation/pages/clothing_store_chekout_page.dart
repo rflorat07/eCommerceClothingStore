@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../../shared/widgets/widgets.dart';
 import '../providers/clothing_store_providers.dart';
 import '../widgets/widgets.dart';
 
@@ -64,37 +65,11 @@ class _ClothingStoreCheckoutContent extends ConsumerWidget {
           //const ShippingInformation(),
         ],
       ),
-      AsyncError(:final error) => _CheckoutErrorSnackBar(
-        error: error,
-        ref: ref,
+      AsyncError() => const CustomErrorSnackBar(
+        message: 'We couldn\'t load your profile. Please try again.',
+        widget: CustomerInfoSkeleton(),
       ),
       _ => const CircularProgressIndicator(),
     };
-  }
-}
-
-class _CheckoutErrorSnackBar extends StatelessWidget {
-  const _CheckoutErrorSnackBar({required this.error, required this.ref});
-
-  final Object error;
-  final WidgetRef ref;
-
-  @override
-  Widget build(BuildContext context) {
-    // Trigger SnackBar on build
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            'We couldn\'t load your profile. Please try again.',
-          ),
-          duration: Duration(seconds: 5),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
-    });
-
-    // Return skeleton while showing SnackBar
-    return const CustomerInfoSkeleton();
   }
 }
