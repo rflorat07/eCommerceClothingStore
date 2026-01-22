@@ -39,6 +39,12 @@ GetProductsUseCase getProductsUseCase(Ref ref) {
 }
 
 @riverpod
+SearchProductsUseCase searchProductsUseCase(Ref ref) {
+  final repository = ref.watch(clothingStoreRepositoryProvider);
+  return SearchProductsUseCase(repository);
+}
+
+@riverpod
 class Profile extends _$Profile {
   @override
   Future<User> build() async {
@@ -62,5 +68,27 @@ class Products extends _$Products {
   Future<List<Product>> build() {
     final getProducts = ref.watch(getProductsUseCaseProvider);
     return getProducts.call();
+  }
+}
+
+@riverpod
+class ProductsSearch extends _$ProductsSearch {
+  @override
+  Future<List<Product>> build() async {
+    return [];
+  }
+
+  Future<void> search(String query) async {
+    if (query.isEmpty) {
+      state = const AsyncData([]);
+      return;
+    }
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(() => _fetchProducts(query));
+  }
+
+  Future<List<Product>> _fetchProducts(String query) async {
+    final searchProducts = ref.read(searchProductsUseCaseProvider);
+    return await searchProducts.call(query);
   }
 }

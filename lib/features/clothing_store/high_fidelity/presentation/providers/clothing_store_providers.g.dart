@@ -101,6 +101,26 @@ final getProductsUseCaseProvider =
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef GetProductsUseCaseRef = AutoDisposeProviderRef<GetProductsUseCase>;
+String _$searchProductsUseCaseHash() =>
+    r'5cddd8c48d1634d42ddd7d4f57acfa8e9bdc3439';
+
+/// See also [searchProductsUseCase].
+@ProviderFor(searchProductsUseCase)
+final searchProductsUseCaseProvider =
+    AutoDisposeProvider<SearchProductsUseCase>.internal(
+      searchProductsUseCase,
+      name: r'searchProductsUseCaseProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$searchProductsUseCaseHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef SearchProductsUseCaseRef =
+    AutoDisposeProviderRef<SearchProductsUseCase>;
 String _$profileHash() => r'83b684563bef8ee13520ab1ec74c0f5c85789be4';
 
 /// See also [Profile].
@@ -149,5 +169,21 @@ final productsProvider =
     );
 
 typedef _$Products = AutoDisposeAsyncNotifier<List<Product>>;
+String _$productsSearchHash() => r'2941afe17ba3868aa935ce20b2375db231883bc9';
+
+/// See also [ProductsSearch].
+@ProviderFor(ProductsSearch)
+final productsSearchProvider =
+    AutoDisposeAsyncNotifierProvider<ProductsSearch, List<Product>>.internal(
+      ProductsSearch.new,
+      name: r'productsSearchProvider',
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$productsSearchHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
+
+typedef _$ProductsSearch = AutoDisposeAsyncNotifier<List<Product>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
