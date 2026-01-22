@@ -109,6 +109,7 @@ class _PinterestGridData extends StatelessWidget {
             mainAxisSpacing: 24,
             crossAxisSpacing: 16,
             itemCount: products.length,
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             itemBuilder: (context, index) {
               return PinterestGridItem(product: products[index]);
             },
