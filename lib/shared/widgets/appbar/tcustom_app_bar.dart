@@ -62,9 +62,12 @@ class TCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 icon: IconsaxPlusLinear.menu,
                 onPressed: () {
                   // Acción al presionar el ícono de menú (ej. abrir drawer)
-                  Scaffold.of(context).openDrawer(); // Ejemplo: abre el drawer
+                  //Scaffold.of(context).openDrawer(); // Ejemplo: abre el drawer
                 },
               ),
+
+            if (!showMenuIcon)
+              const SizedBox(width: 40.0), // Espacio vacío si no hay ícono
           ],
         ),
       ),
@@ -72,5 +75,5 @@ class TCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(72.0);
 }

@@ -23,6 +23,9 @@ class AppRoutes {
   /// Clothing store checkout route
   static const String clothingStoreCheckout = '/clothing-store/checkout';
 
+  /// Clothing store search route
+  static const String clothingStoreSearch = '/clothing-store/search';
+
   /// Custom bottom navigation bar route
   static const String customBottomNavBar = '/custom-bottom-nav-bar';
 
@@ -66,6 +69,11 @@ final GoRouter appRouter = GoRouter(
       path: AppRoutes.clothingStoreCheckout,
       name: 'clothing-store-checkout',
       builder: (context, state) => const ClothingStoreCheckoutPage(),
+    ),
+    GoRoute(
+      path: AppRoutes.clothingStoreSearch,
+      name: 'clothing-store-search',
+      builder: (context, state) => const ClothingStoreSearchPage(),
     ),
     GoRoute(
       path: AppRoutes.customBottomNavBar,

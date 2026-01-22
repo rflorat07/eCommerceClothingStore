@@ -17,7 +17,7 @@ class ClothingStoreFavoritesPage extends StatelessWidget {
       body: Column(
         spacing: 16.0,
         children: [
-          Text('Clothing Store Favorites Page'),
+          Text('Clothing Store Categories'),
           _ClothingStoreFavoritesContent(),
         ],
       ),

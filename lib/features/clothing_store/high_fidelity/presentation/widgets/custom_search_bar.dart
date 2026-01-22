@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
+import '../../../../../core/router/app_router.dart';
 import '../../../../../shared/widgets/widgets.dart';
 
 class CustomSearchBar extends StatelessWidget {
@@ -23,6 +25,7 @@ class CustomSearchBar extends StatelessWidget {
               child: RoundedContainer(
                 height: 48.0,
                 radius: 8.0,
+                onTap: () => context.push(AppRoutes.clothingStoreSearch),
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 borderColor: colorScheme.outline,

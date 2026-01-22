@@ -27,4 +27,16 @@ class ClothingStoreRepositoryImpl implements ClothingStoreRepository {
     final productModel = await _localDataSource.getProducts();
     return productModel.map((model) => model.toEntity()).toList();
   }
+
+  @override
+  Future<List<Product>> getProductsByCategory(String category) {
+    // TODO: implement getProductsByCategory
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<Product>> searchProducts(String query) async {
+    final productModel = await _localDataSource.searchedProducts(query);
+    return productModel.map((model) => model.toEntity()).toList();
+  }
 }

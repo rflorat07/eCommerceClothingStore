@@ -77,4 +77,29 @@ class ClothingStoreLocalDataSource {
       throw ServerFailure(message: 'Failed to fetch products data: $e');
     }
   }
+
+  Future<List<ProductModel>> searchedProducts(String query) async {
+    try {
+      // Make the request using NetworkClient
+      final response = await NetworkClient.instance.dio.get(
+        'https://dummyjson.com/products/search',
+        queryParameters: {'q': query},
+      );
+
+      // Extract values from the response map with defaults
+      final productsData = response.data['products'] as List<dynamic>? ?? [];
+
+      // Parse the products list using Freezed fromJson
+      final products = productsData
+          .map(
+            (product) => ProductModel.fromJson(product as Map<String, dynamic>),
+          )
+          .toList();
+
+      return products;
+    } catch (e) {
+      // In case of error, return local data as fallback
+      throw ServerFailure(message: 'Failed to fetch search products data: $e');
+    }
+  }
 }
