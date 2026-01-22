@@ -29,9 +29,9 @@ class ClothingStoreRepositoryImpl implements ClothingStoreRepository {
   }
 
   @override
-  Future<List<Product>> getProductsByCategory(String category) {
-    // TODO: implement getProductsByCategory
-    throw UnimplementedError();
+  Future<List<Product>> getProductsByCategory(String category) async {
+    final productModel = await _localDataSource.getProductsByCategory(category);
+    return productModel.map((model) => model.toEntity()).toList();
   }
 
   @override
