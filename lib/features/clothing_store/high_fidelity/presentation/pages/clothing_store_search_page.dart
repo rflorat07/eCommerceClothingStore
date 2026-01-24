@@ -41,9 +41,9 @@ class _ClothingStoreSearchContent extends ConsumerWidget {
         AsyncData(:final value) => _PinterestGridData(products: value),
         AsyncError() => const CustomErrorSnackBar(
           message: 'We couldn\'t load products. Please try again.',
-          widget: _PinterestGridSkeleton(),
+          widget: PinterestGridSkeleton(),
         ),
-        _ => const _PinterestGridSkeleton(),
+        _ => const PinterestGridSkeleton(),
       },
     );
   }
@@ -114,22 +114,5 @@ class _PinterestGridData extends StatelessWidget {
               return PinterestGridItem(product: products[index]);
             },
           );
-  }
-}
-
-class _PinterestGridSkeleton extends StatelessWidget {
-  const _PinterestGridSkeleton();
-
-  @override
-  Widget build(BuildContext context) {
-    return MasonryGridView.count(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      mainAxisSpacing: 24.0,
-      crossAxisSpacing: 16.0,
-      itemCount: 6,
-      itemBuilder: (_, index) => PinterestGridItemSkeleton(index: index),
-    );
   }
 }
