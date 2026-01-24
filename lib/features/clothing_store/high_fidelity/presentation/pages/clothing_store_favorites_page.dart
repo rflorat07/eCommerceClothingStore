@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../../../../../shared/widgets/widgets.dart';
+import '../../../../../shared/widgets/widgets.dart'
+    hide PinterestGridItemSkeleton;
 import '../../domain/entities/entities.dart';
 import '../providers/providers.dart';
 import '../widgets/widgets.dart';
@@ -17,7 +18,7 @@ class ClothingStoreFavoritesPage extends StatelessWidget {
       body: Column(
         spacing: 16.0,
         children: [
-          Text('Clothing Store Favorites Page'),
+          Text('Clothing Store Categories'),
           _ClothingStoreFavoritesContent(),
         ],
       ),
