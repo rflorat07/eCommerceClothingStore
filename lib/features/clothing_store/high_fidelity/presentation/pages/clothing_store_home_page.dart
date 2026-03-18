@@ -8,15 +8,13 @@ class ClothingStoreHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            CustomerInfo(),
-            CustomSearchBar(),
-            CategoryList(),
-            PinterestGrid(),
-          ],
-        ),
+      body: CustomScrollView(
+        slivers: [
+          CustomerInfo(),
+          CustomSearchBar(),
+          CategoryList(),
+          PinterestGrid(),
+        ],
       ),
     );
   }

@@ -15,14 +15,18 @@ class ClothingStoreBottomNavBar extends ConsumerWidget {
     final currentIndex = ref.watch(navigationStateProvider);
 
     return Scaffold(
-      body: IndexedStack(
-        index: currentIndex,
-        children: const [
-          ClothingStoreHomePage(),
-          ClothingStoreShoppingBagPage(),
-          ClothingStoreFavoritesPage(),
-          ClothingStoreProfilePage(),
-        ],
+      extendBody: true,
+      body: SafeArea(
+        bottom: false,
+        child: IndexedStack(
+          index: currentIndex,
+          children: const [
+            ClothingStoreHomePage(),
+            ClothingStoreShoppingBagPage(),
+            ClothingStoreFavoritesPage(),
+            ClothingStoreProfilePage(),
+          ],
+        ),
       ),
       bottomNavigationBar: SafeArea(
         child: Container(
