@@ -1,3 +1,15 @@
+// Re-export Design System widgets
+export 'package:ecommerce_ds/ecommerce_ds.dart'
+    show
+        DSCircularIcon,
+        DSCircularImage,
+        DSRoundedContainer,
+        DSRoundedImage,
+        DSSkeleton,
+        DSCircleSkeleton,
+        DSPinterestGridItemSkeleton;
+
+// App-specific widget aliases for backward compatibility
 export './appbar/tcustom_app_bar.dart';
 export './common_widgets.dart';
 export './containers/rounded_container.dart';
