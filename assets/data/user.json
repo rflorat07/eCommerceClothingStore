@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "username": "alberto.stevano",
+  "email": "alberto.stevano@example.com",
+  "firstName": "Alberto",
+  "lastName": "Stevano",
+  "gender": "male",
+  "image": "assets/images/profile.png"
+}
